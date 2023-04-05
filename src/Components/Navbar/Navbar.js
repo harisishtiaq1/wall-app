@@ -1,7 +1,7 @@
-import { AppBar, Toolbar, Typography } from '@mui/material'
+import { AppBar, Grid, Toolbar, Typography } from '@mui/material'
 import React from 'react'
 import SideMenu from '../SideMenu/SideMenu'
-// import NewsFeed from '../NewsFeed/NewsFeed'
+import NewsFeed from '../NewsFeed/NewsFeed'
 
 function Navbar() {
   return (
@@ -14,7 +14,14 @@ function Navbar() {
         </Toolbar>
     </AppBar>
     {/* <NewsFeed/> */}
+    <Grid container spacing={3}>
+        <Grid item xs={12} sm={4}>
     <SideMenu/>
+    </Grid>
+    <Grid item xs={12} sm={4}>
+    <NewsFeed/>
+    </Grid>
+    </Grid>
     </>
   )
 }

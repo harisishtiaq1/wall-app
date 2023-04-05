@@ -1,25 +1,32 @@
 import {
   Avatar,
   AvatarGroup,
-  Box,
+  Button,
   Card,
   CardActionArea,
   CardMedia,
   Paper,
   Stack,
-  SvgIcon,
   Typography,
 } from "@mui/material";
+import VideocamIcon from "@mui/icons-material/Videocam";
+
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import React from "react";
 import cairo from "../../assets/cairo.jpg";
 import person2 from "../../assets/A3.jpg";
 import person from "../../assets/A1.jpg";
 import person1 from "../../assets/A2.jpg";
 import person3 from "../../assets/A10.jpg";
+import Details from "./Details";
+import FaceBookDesign from "./FaceBookDesign";
+import Suggestions from "./Suggestions";
 function SideMenu() {
   return (
     <Stack direction="column" sx={{ mt: 8 }}>
-      <Paper sx={{ width: "350px", borderRadius: "10px", mt: 5 }}>
+      <Paper
+        sx={{ width: "350px", height: "500px", borderRadius: "10px", mt: 5 }}
+      >
         <Card sx={{ maxWidth: 350 }}>
           <CardActionArea>
             <CardMedia
@@ -101,8 +108,25 @@ function SideMenu() {
               sx={{ width: "30px", height: "30px" }}
             />
           </AvatarGroup>
+          <Button
+            variant="contained"
+            sx={{ mt: 2, borderRadius: "10px" }}
+            startIcon={<LocalPhoneIcon />}
+          >
+            Group Call
+          </Button>
+          <Button
+            variant="outlined"
+            sx={{ mt: 2, borderRadius: "10px" }}
+            startIcon={<VideocamIcon />}
+          >
+            Video Call
+          </Button>
         </Stack>
       </Paper>
+      <Details />
+      <FaceBookDesign />
+      <Suggestions />
     </Stack>
   );
 }

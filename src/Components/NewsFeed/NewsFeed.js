@@ -30,7 +30,7 @@ import ShareIcon from "@mui/icons-material/Share";
 function NewsFeed() {
   return (
     <Stack direction="column" sx={{mt:10}}>
-      <Paper sx={{ width: "500px", height: "100px", borderRadius: "10px" }}>
+      <Paper sx={{ width: "500px", height: "100px", borderRadius: "10px", mt: 3  }}>
         <Typography component="h3" variant="h6" sx={{ ml: 3 }}>
           Create Post
         </Typography>
