@@ -14,8 +14,8 @@ import Users from "./Users";
 import Scrollbars from "react-custom-scrollbars";
 function RightSideMenu() {
   return (
-    <Scrollbars style={{ width: 390, height: 500 }} autoHide={true}>
-      <Stack direction="column" sx={{ mt: 6, ml: 15}}>
+    <Scrollbars style={{ width: 310, height: 500 }} autoHide={true}>
+      <Stack direction="column" sx={{ mt: 6, ml: 5}}>
         <Paper
           sx={{ width: "270px", height: "250px", borderRadius: "10px", mt: 3 }}
         >

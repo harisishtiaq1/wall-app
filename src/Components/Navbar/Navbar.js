@@ -16,10 +16,10 @@ function Navbar() {
         <Grid item xs={12} sm={3}>
           <SideMenu />
         </Grid>
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={5}>
           <NewsFeed />
         </Grid>
-        <Grid item xs={12} sm={5}>
+        <Grid item xs={12} sm={4}>
           <RightSideMenu />
         </Grid>
       </Grid>

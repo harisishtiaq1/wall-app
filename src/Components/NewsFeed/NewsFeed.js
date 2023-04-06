@@ -8,7 +8,7 @@ import {
   Paper,
   Stack,
   Typography,
-  Divider,
+  Divider
 } from "@mui/material";
 import SecondPost from "./SecondPost";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
@@ -50,41 +50,39 @@ function NewsFeed() {
                 width: "400px",
                 height: "40px",
                 mt: 1,
-                ml: 2,
+                ml:2,
                 borderRadius: "50px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                display:'flex',
+                alignItems:"center",
+                justifyContent:"center"
               }}
             >
               <InputBase
                 sx={{ ml: 2, flex: 1, mt: 1 }}
                 placeholder="What's in Your Mind?"
               />
-              <Stack direction="row">
-                <IconButton>
-                  <ImageIcon fontSize="small" />
-                </IconButton>
-                <IconButton>
-                  <VideocamIcon fontSize="small" />
-                </IconButton>
-                <IconButton>
-                  <EmojiEmotionsIcon fontSize="small" />
-                </IconButton>
-                <IconButton>
-                  <Person2Icon fontSize="small" />
-                </IconButton>
-                <IconButton>
-                  <SendIcon fontSize="small" />
-                </IconButton>
+              <Stack direction='row'>
+              <IconButton>
+                <ImageIcon fontSize="small" />
+              </IconButton>
+              <IconButton>
+                <VideocamIcon fontSize="small" />
+              </IconButton>
+              <IconButton>
+                <EmojiEmotionsIcon fontSize="small" />
+              </IconButton>
+              <IconButton>
+                <Person2Icon fontSize="small" />
+              </IconButton>
+              <IconButton>
+                <SendIcon fontSize="small" />
+              </IconButton>
               </Stack>
             </Paper>
           </Stack>
         </Paper>
-        <Paper
-          sx={{ width: "500px", height: "670px", borderRadius: "10px", mt: 5 }}
-        >
-          <Stack direction="row" sx={{ mt: 2 }}>
+        <Paper sx={{ width: "500px", height:"670px",borderRadius: "10px", mt: 5 }}>
+          <Stack direction="row" sx={{mt:2}}>
             <Box
               component="img"
               src={person2}
@@ -150,18 +148,11 @@ function NewsFeed() {
             </Stack>
           </Stack>
           <Divider variant="middle" />
-          <Stack direction="row" sx={{ mt: 2 }}>
+          <Stack direction="row" sx={{mt:2}}>
             <Box
               component="img"
               src={person}
-              sx={{
-                mr: 1,
-                width: "40px",
-                height: "40px",
-                borderRadius: "50%",
-                ml: 3,
-                mt: 1,
-              }}
+              sx={{ mr: 1, width: "40px",height:"40px",borderRadius: "50%", ml: 3, mt: 1 }}
             />
             <Paper
               sx={{
@@ -170,7 +161,7 @@ function NewsFeed() {
                 height: "45px",
                 mt: 0.5,
                 borderRadius: "50px",
-                display: "flex",
+                display:'flex'
               }}
             >
               <InputBase
@@ -178,20 +169,20 @@ function NewsFeed() {
                 placeholder="Write a comment"
               />
               <Stack direction="row">
-                <IconButton sx={{ ml: 15 }}>
-                  <EmojiEmotionsIcon fontSize="small" />
-                </IconButton>
-                <IconButton>
-                  <AttachFileIcon fontSize="small" />
-                </IconButton>
+              <IconButton sx={{ ml: 15 }}>
+                <EmojiEmotionsIcon fontSize="small" />
+              </IconButton>
+              <IconButton>
+                <AttachFileIcon fontSize="small" />
+              </IconButton>
               </Stack>
             </Paper>
           </Stack>
-          <Divider sx={{ mt: 2 }} />
-          <Typography component="h3" variant="h6" sx={{ ml: 3, mt: 2 }}>
+          <Divider sx={{mt:2}}/>
+          <Typography component="h3" variant="h6" sx={{ ml: 3,mt:2 }}>
             Comments
           </Typography>
-          <Stack direction="row" sx={{ mt: 2 }}>
+          <Stack direction="row" sx={{mt:2}}>
             <Box
               component="img"
               src={person1}
@@ -217,12 +208,8 @@ function NewsFeed() {
                 </Typography>
               </Box>
               <Stack direction="row" spacing={3}>
-                <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
-                  Like
-                </Typography>
-                <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
-                  Reply
-                </Typography>
+                <Typography sx={{cursor:"pointer",fontSize:"15px"}}>Like</Typography>
+                <Typography sx={{cursor:"pointer",fontSize:"15px"}}>Reply</Typography>
               </Stack>
             </Stack>
           </Stack>
@@ -254,12 +241,8 @@ function NewsFeed() {
                 />
               </Box>
               <Stack direction="row" spacing={3}>
-                <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
-                  Like
-                </Typography>
-                <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
-                  Reply
-                </Typography>
+                <Typography sx={{cursor:"pointer",fontSize:"15px"}}>Like</Typography>
+                <Typography sx={{cursor:"pointer",fontSize:"15px"}}>Reply</Typography>
               </Stack>
             </Stack>
           </Stack>

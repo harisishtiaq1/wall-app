@@ -13,7 +13,7 @@ import VideocamIcon from "@mui/icons-material/Videocam";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import React from "react";
 import cairo from "../../assets/cairo.jpg";
-import person2 from "../../assets/A3.jpg";
+import person2 from "../../assets/A5.jpg";
 import person from "../../assets/A1.jpg";
 import person1 from "../../assets/A2.jpg";
 import person3 from "../../assets/A10.jpg";
@@ -21,6 +21,13 @@ import Details from "./Details";
 import FaceBookDesign from "./FaceBookDesign";
 import Suggestions from "./Suggestions";
 import Scrollbars from "react-custom-scrollbars";
+const styles = {
+  avatar: {
+    width: 24,
+    height: 24,
+    fontSize: "0.8rem",
+  },
+};
 function SideMenu() {
   const thumbStyle = {
     backgroundColor: "#888",
@@ -51,7 +58,7 @@ function SideMenu() {
             <CardActionArea>
               <CardMedia
                 component="img"
-                height="150"
+                height="100"
                 image={cairo}
                 alt="green iguana"
               />
@@ -101,43 +108,37 @@ function SideMenu() {
             <Typography component="h3" variant="p" sx={{ mt: 2 }}>
               8 Mutual Friends
             </Typography>
-            <AvatarGroup max={4} sx={{ mt: 3 }}>
-              <Avatar
-                alt="Remy Sharp"
-                src={person2}
-                sx={{ width: "30px", height: "30px" }}
-              />
-              <Avatar
-                alt="Travis Howard"
-                src={person}
-                sx={{ width: "30px", height: "30px" }}
-              />
-              <Avatar
-                alt="Cindy Baker"
-                src={person1}
-                sx={{ width: "30px", height: "30px" }}
-              />
-              <Avatar
-                alt="Agnes Walker"
-                src={person3}
-                sx={{ width: "30px", height: "30px" }}
-              />
+            <AvatarGroup sx={{ mt: 3 }}>
+              <Avatar alt="Remy Sharp" src={person2} style={styles.avatar} />
+              <Avatar alt="Travis Howard" src={person} style={styles.avatar} />
+              <Avatar alt="Cindy Baker" src={person1} style={styles.avatar} />
+              <Avatar alt="Agnes Walker" src={person3} style={styles.avatar} />
               <Avatar
                 alt="Trevor Henderson"
                 src={person}
-                sx={{ width: "30px", height: "30px" }}
+                style={styles.avatar}
               />
             </AvatarGroup>
             <Button
               variant="contained"
-              sx={{ mt: 2, borderRadius: "10px" }}
+              sx={{
+                mt: 2,
+                borderRadius: "10px",
+                padding: "7px",
+                fontSize: "10px",
+              }}
               startIcon={<LocalPhoneIcon />}
             >
               Group Call
             </Button>
             <Button
               variant="outlined"
-              sx={{ mt: 2, borderRadius: "10px" }}
+              sx={{
+                mt: 2,
+                borderRadius: "10px",
+                padding: "7px",
+                fontSize: "10px",
+              }}
               startIcon={<VideocamIcon />}
             >
               Video Call
