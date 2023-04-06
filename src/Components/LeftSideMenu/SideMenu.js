@@ -10,7 +10,6 @@ import {
   Typography,
 } from "@mui/material";
 import VideocamIcon from "@mui/icons-material/Videocam";
-
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import React from "react";
 import cairo from "../../assets/cairo.jpg";
@@ -21,113 +20,125 @@ import person3 from "../../assets/A10.jpg";
 import Details from "./Details";
 import FaceBookDesign from "./FaceBookDesign";
 import Suggestions from "./Suggestions";
+import Scrollbars from "react-custom-scrollbars";
 function SideMenu() {
   return (
-    <Stack direction="column" sx={{ mt: 8 }}>
-      <Paper
-        sx={{ width: "350px", height: "500px", borderRadius: "10px", mt: 5 }}
+    <Scrollbars style={{ width: 350, height: 500 }} autoHide={true}>
+      <Stack
+        direction="column"
+        sx={{
+          mt: 8,
+          display: {
+            xs: "none",
+            sm: "block",
+          },
+        }}
       >
-        <Card sx={{ maxWidth: 350 }}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="150"
-              image={cairo}
-              alt="green iguana"
-            />
-          </CardActionArea>
-        </Card>
-        <Avatar
-          sx={{
-            border: "5px solid rgb(255, 255, 255)",
-            marginBottom: "10px",
-            width: "84px",
-            height: "84px",
-            marginTop: "-42px",
-            marginLeft: "125px",
-            position: "relative",
-            display: "flex",
-            webkitBoxAlign: "center",
-            alignItems: "center",
-            webkitBoxPack: "center",
-            justifyContent: "center",
-            textAlign: "center",
-          }}
+        <Paper
+          sx={{ width: "350px", height: "500px", borderRadius: "10px", mt: 5 }}
         >
-          <img
-            src={person2}
-            alt="Person"
-            style={{
-              maxWidth: "100%",
-              width: "100%",
-              height: "100%",
+          <Card sx={{ maxWidth: 350 }}>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                height="150"
+                image={cairo}
+                alt="green iguana"
+              />
+            </CardActionArea>
+          </Card>
+          <Avatar
+            sx={{
+              border: "5px solid rgb(255, 255, 255)",
+              marginBottom: "10px",
+              width: "84px",
+              height: "84px",
+              marginTop: "-42px",
+              marginLeft: "125px",
+              position: "relative",
+              display: "flex",
+              webkitBoxAlign: "center",
+              alignItems: "center",
+              webkitBoxPack: "center",
+              justifyContent: "center",
               textAlign: "center",
-              objectFit: "cover",
-              color: "transparent",
-              textIndent: "10000px",
             }}
-          />
-        </Avatar>
-        <Stack
-          direction="column"
-          sx={{ display: "flex", alignItems: "center" }}
-        >
-          <Typography component="h3" variant="h6">
-            Eric Brickey
-          </Typography>
-          <Typography component="p" variant="p" sx={{ color: "grey" }}>
-            Oslo,Norway
-          </Typography>
-          <Typography component="h3" variant="p" sx={{ mt: 2 }}>
-            8 Mutual Friends
-          </Typography>
-          <AvatarGroup max={4} sx={{ mt: 3 }}>
-            <Avatar
-              alt="Remy Sharp"
+          >
+            <img
               src={person2}
-              sx={{ width: "30px", height: "30px" }}
+              alt="Person"
+              style={{
+                maxWidth: "100%",
+                width: "100%",
+                height: "100%",
+                textAlign: "center",
+                objectFit: "cover",
+                color: "transparent",
+                textIndent: "10000px",
+              }}
             />
-            <Avatar
-              alt="Travis Howard"
-              src={person}
-              sx={{ width: "30px", height: "30px" }}
-            />
-            <Avatar
-              alt="Cindy Baker"
-              src={person1}
-              sx={{ width: "30px", height: "30px" }}
-            />
-            <Avatar
-              alt="Agnes Walker"
-              src={person3}
-              sx={{ width: "30px", height: "30px" }}
-            />
-            <Avatar
-              alt="Trevor Henderson"
-              src={person}
-              sx={{ width: "30px", height: "30px" }}
-            />
-          </AvatarGroup>
-          <Button
-            variant="contained"
-            sx={{ mt: 2, borderRadius: "10px" }}
-            startIcon={<LocalPhoneIcon />}
+          </Avatar>
+          <Stack
+            direction="column"
+            sx={{ display: "flex", alignItems: "center" }}
           >
-            Group Call
-          </Button>
-          <Button
-            variant="outlined"
-            sx={{ mt: 2, borderRadius: "10px" }}
-            startIcon={<VideocamIcon />}
-          >
-            Video Call
-          </Button>
-        </Stack>
-      </Paper>
-      <Details />
-      <FaceBookDesign />
-      <Suggestions />
-    </Stack>
+            <Typography component="h3" variant="h6">
+              Eric Brickey
+            </Typography>
+            <Typography component="p" variant="p" sx={{ color: "grey" }}>
+              Oslo,Norway
+            </Typography>
+            <Typography component="h3" variant="p" sx={{ mt: 2 }}>
+              8 Mutual Friends
+            </Typography>
+            <AvatarGroup max={4} sx={{ mt: 3 }}>
+              <Avatar
+                alt="Remy Sharp"
+                src={person2}
+                sx={{ width: "30px", height: "30px" }}
+              />
+              <Avatar
+                alt="Travis Howard"
+                src={person}
+                sx={{ width: "30px", height: "30px" }}
+              />
+              <Avatar
+                alt="Cindy Baker"
+                src={person1}
+                sx={{ width: "30px", height: "30px" }}
+              />
+              <Avatar
+                alt="Agnes Walker"
+                src={person3}
+                sx={{ width: "30px", height: "30px" }}
+              />
+              <Avatar
+                alt="Trevor Henderson"
+                src={person}
+                sx={{ width: "30px", height: "30px" }}
+              />
+            </AvatarGroup>
+            <Button
+              variant="contained"
+              sx={{ mt: 2, borderRadius: "10px" }}
+              startIcon={<LocalPhoneIcon />}
+            >
+              Group Call
+            </Button>
+            <Button
+              variant="outlined"
+              sx={{ mt: 2, borderRadius: "10px" }}
+              startIcon={<VideocamIcon />}
+            >
+              Video Call
+            </Button>
+          </Stack>
+        </Paper>
+        <Details />
+        <FaceBookDesign />
+        <Suggestions />
+      </Stack>
+    </Scrollbars>
   );
 }
 

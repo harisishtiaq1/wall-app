@@ -11,9 +11,18 @@ import stories1 from "../../assets/stories2.jpg";
 import TrendingInIndia from "./TrendingInIndia";
 import WhoTOFollow from "./WhoTOFollow";
 import Users from "./Users";
+import Scrollbars from "react-custom-scrollbars";
 function RightSideMenu() {
   return (
-    <Stack direction="column" sx={{ mt: 8, ml: 15 }}>
+    <Scrollbars
+      style={{ width: 390, height: 500 }}
+      autoHide={true}
+    >
+
+    <Stack direction="column" sx={{ mt: 8, ml: 15,display:{
+      xs:"none",
+      sm:"block"
+    } }}>
       <Paper
         sx={{ width: "270px", height: "250px", borderRadius: "10px", mt: 5 }}
       >
@@ -57,6 +66,7 @@ function RightSideMenu() {
       <WhoTOFollow />
       <Users />
     </Stack>
+      </Scrollbars>
   );
 }
 
