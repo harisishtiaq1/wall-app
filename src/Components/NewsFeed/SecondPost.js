@@ -25,8 +25,10 @@ import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 
 function SecondPost() {
   return (
-    <Paper sx={{ width: "500px", height:"680px",borderRadius: "10px", mt: 5 }}>
-      <Stack direction="row" sx={{mt:2}}>
+    <Paper
+      sx={{ width: "500px", height: "680px", borderRadius: "10px", mt: 5 }}
+    >
+      <Stack direction="row" sx={{ mt: 2 }}>
         <Box
           component="img"
           src={person2}
