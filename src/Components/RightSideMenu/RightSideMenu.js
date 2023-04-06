@@ -15,7 +15,7 @@ function RightSideMenu() {
   return (
     <Stack direction="column" sx={{ mt: 8,ml:15 }}>
       <Paper
-        sx={{ width: "250px", height: "250px", borderRadius: "10px", mt: 5 }}
+        sx={{ width: "270px", height: "250px", borderRadius: "10px", mt: 5 }}
       >
         <Link
           href="#"

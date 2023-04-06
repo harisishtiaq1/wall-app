@@ -15,7 +15,7 @@ function Details() {
         <IconButton>
           <Person2Icon />
         </IconButton>
-        <Typography width={200} sx={{ color: "grey",mt:"12px" }}>
+        <Typography width={200} sx={{ color: "grey", mt: "12px" }}>
           191 Main St, Bar Harbor, ME 04609, United States
         </Typography>
       </Stack>
@@ -23,7 +23,7 @@ function Details() {
         <IconButton>
           <LocalPhoneIcon />
         </IconButton>
-        <Typography width={200} sx={{ color: "grey",mt:"12px" }}>
+        <Typography width={200} sx={{ color: "grey", mt: "12px" }}>
           092654 60634
         </Typography>
       </Stack>
@@ -31,7 +31,7 @@ function Details() {
         <IconButton>
           <EmailIcon />
         </IconButton>
-        <Typography width={200} sx={{ color: "grey",mt:"12px" }}>
+        <Typography width={200} sx={{ color: "grey", mt: "12px" }}>
           ericbrickey@gmail.com
         </Typography>
       </Stack>
@@ -39,7 +39,7 @@ function Details() {
         <IconButton>
           <InfoIcon />
         </IconButton>
-        <Typography width={200} sx={{ color: "grey",mt:"12px" }}>
+        <Typography width={200} sx={{ color: "grey", mt: "12px" }}>
           Edit description
         </Typography>
       </Stack>
@@ -47,7 +47,7 @@ function Details() {
         <IconButton>
           <ThumbUpOffAltIcon />
         </IconButton>
-        <Typography width={200} sx={{ color: "grey",mt:"12px" }}>
+        <Typography width={200} sx={{ color: "grey", mt: "12px" }}>
           331 people like this
         </Typography>
       </Stack>
@@ -55,7 +55,7 @@ function Details() {
         <IconButton>
           <PublicIcon />
         </IconButton>
-        <Typography width={200} sx={{ color: "grey",mt:"12px" }}>
+        <Typography width={200} sx={{ color: "grey", mt: "12px" }}>
           https://www.crema.com
         </Typography>
       </Stack>

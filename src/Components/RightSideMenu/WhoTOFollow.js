@@ -7,7 +7,7 @@ import person3 from "../../assets/A10.jpg";
 function WhoTOFollow() {
   return (
     <Paper
-      sx={{ width: "250px", height: "450px", borderRadius: "10px", mt: 5 }}
+      sx={{ width: "270px", height: "450px", borderRadius: "10px", mt: 5 }}
     >
       <Stack
         direction="row"

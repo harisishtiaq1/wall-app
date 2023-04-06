@@ -5,7 +5,7 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 function TrendingInIndia() {
   return (
     <Paper
-      sx={{ width: "250px", height: "300px", borderRadius: "10px", mt: 5 }}
+      sx={{ width: "270px", height: "300px", borderRadius: "10px", mt: 5 }}
     >
       <Link
         href="#"
