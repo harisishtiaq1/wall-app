@@ -15,15 +15,18 @@ function Navbar() {
         </Toolbar>
     </AppBar>
     {/* <NewsFeed/> */}
-    {/* <Grid container spacing={3}>
+    <Grid container spacing={3}>
         <Grid item xs={12} sm={4}>
     <SideMenu/>
     </Grid>
     <Grid item xs={12} sm={4}>
     <NewsFeed/>
     </Grid>
-    </Grid> */}
-    <RightSideMenu/>
+    <Grid item xs={12} sm={4}>
+      <RightSideMenu/>
+    </Grid>
+    </Grid>
+    {/* <RightSideMenu/> */}
     </>
   )
 }
