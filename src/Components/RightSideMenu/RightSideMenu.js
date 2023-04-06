@@ -15,10 +15,8 @@ import Scrollbars from "react-custom-scrollbars";
 function RightSideMenu() {
   return (
     <Scrollbars style={{ width: 310, height: 490 }} autoHide={true}>
-      <Stack direction="column" sx={{ ml: 5}}>
-        <Paper
-          sx={{ width: "270px", height: "250px", borderRadius: "10px" }}
-        >
+      <Stack direction="column" sx={{ ml: 5 }}>
+        <Paper sx={{ width: "270px", height: "250px", borderRadius: "10px" }}>
           <Link
             href="#"
             underline="none"
@@ -32,7 +30,7 @@ function RightSideMenu() {
           >
             View All
           </Link>
-          <Stack direction="row" sx={{mt:2}} spacing={2}>
+          <Stack direction="row" sx={{ mt: 2 }} spacing={2}>
             <Card sx={{ maxWidth: 110, ml: 2 }}>
               <CardActionArea>
                 <CardMedia

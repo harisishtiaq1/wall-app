@@ -37,7 +37,7 @@ function TrendingInIndia() {
               mt: 1,
             }}
           />
-          <Stack direction="column" sx={{mt:1}}>
+          <Stack direction="column" sx={{ mt: 1 }}>
             <Typography sx={{ fontSize: "10px", color: "grey" }}>
               Trending In India
             </Typography>
@@ -72,7 +72,7 @@ function TrendingInIndia() {
               mt: 1,
             }}
           />
-          <Stack direction="column" sx={{mt:1}}>
+          <Stack direction="column" sx={{ mt: 1 }}>
             <Typography sx={{ fontSize: "10px", color: "grey" }}>
               Trending In India
             </Typography>
@@ -107,7 +107,7 @@ function TrendingInIndia() {
               mt: 1,
             }}
           />
-          <Stack direction="column" sx={{mt:1}}>
+          <Stack direction="column" sx={{ mt: 1 }}>
             <Typography sx={{ fontSize: "10px", color: "grey" }}>
               Trending In India
             </Typography>
@@ -142,7 +142,7 @@ function TrendingInIndia() {
               mt: 1,
             }}
           />
-          <Stack direction="column" sx={{mt:1}}>
+          <Stack direction="column" sx={{ mt: 1 }}>
             <Typography sx={{ fontSize: "10px", color: "grey" }}>
               Trending In India
             </Typography>
@@ -177,7 +177,7 @@ function TrendingInIndia() {
               mt: 1,
             }}
           />
-          <Stack direction="column" sx={{mt:1}}>
+          <Stack direction="column" sx={{ mt: 1 }}>
             <Typography sx={{ fontSize: "10px", color: "grey" }}>
               Trending In India
             </Typography>

@@ -31,7 +31,7 @@ function FaceBookDesign() {
       >
         View All
       </Link>
-      <Stack direction="row" >
+      <Stack direction="row">
         <Box
           component="img"
           src={facebook}

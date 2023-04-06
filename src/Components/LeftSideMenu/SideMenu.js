@@ -45,13 +45,8 @@ function SideMenu() {
         <div {...props} style={{ ...style, ...thumbStyle }} />
       )}
     >
-      <Stack
-        direction="column"
-        
-      >
-        <Paper
-          sx={{ width: "280px", height: "500px", borderRadius: "15px" }}
-        >
+      <Stack direction="column">
+        <Paper sx={{ width: "280px", height: "500px", borderRadius: "15px" }}>
           <Card sx={{ maxWidth: 350 }}>
             <CardActionArea>
               <CardMedia

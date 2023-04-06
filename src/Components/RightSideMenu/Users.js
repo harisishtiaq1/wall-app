@@ -99,9 +99,6 @@ function Users() {
             </Typography>
           </Stack>
         </Stack>
-        <Stack>
-          <Typography></Typography>
-        </Stack>
       </Stack>
       <Stack
         direction="row"
@@ -130,9 +127,6 @@ function Users() {
             </Typography>
           </Stack>
         </Stack>
-        <Stack>
-          <Typography></Typography>
-        </Stack>
       </Stack>
       <Stack
         direction="row"
@@ -159,9 +153,6 @@ function Users() {
               12 Minutes Ago
             </Typography>
           </Stack>
-        </Stack>
-        <Stack>
-          <Typography></Typography>
         </Stack>
       </Stack>
     </Paper>
