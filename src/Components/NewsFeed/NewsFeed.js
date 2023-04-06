@@ -30,10 +30,10 @@ import ShareIcon from "@mui/icons-material/Share";
 import Scrollbars from "react-custom-scrollbars";
 function NewsFeed() {
   return (
-    <Scrollbars style={{ width: 500, height: 500 }} autoHide={true}>
-      <Stack direction="column" sx={{ mt: 6 }}>
+    <Scrollbars style={{ width: 500, height: 490 }} autoHide={true}>
+      <Stack direction="column">
         <Paper
-          sx={{ width: "500px", height: "100px", borderRadius: "10px", mt: 3 }}
+          sx={{ width: "500px", height: "100px", borderRadius: "10px" }}
         >
           <Typography component="h3" variant="h6" sx={{ ml: 3 }}>
             Create Post
@@ -58,7 +58,7 @@ function NewsFeed() {
               }}
             >
               <InputBase
-                sx={{ ml: 2, flex: 1, mt: 1 }}
+                sx={{ ml: 3, flex: 1, mt: 0.5 }}
                 placeholder="What's in Your Mind?"
               />
               <Stack direction='row'>

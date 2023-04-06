@@ -39,7 +39,7 @@ function SideMenu() {
   };
   return (
     <Scrollbars
-      style={{ width: 280, height: 500 }}
+      style={{ width: 280, height: 490 }}
       autoHide={true}
       renderThumbVertical={({ style, ...props }) => (
         <div {...props} style={{ ...style, ...thumbStyle }} />
@@ -47,12 +47,10 @@ function SideMenu() {
     >
       <Stack
         direction="column"
-        sx={{
-          mt: 6,
-        }}
+        
       >
         <Paper
-          sx={{ width: "280px", height: "500px", borderRadius: "15px", mt: 3 }}
+          sx={{ width: "280px", height: "500px", borderRadius: "15px" }}
         >
           <Card sx={{ maxWidth: 350 }}>
             <CardActionArea>

@@ -7,9 +7,9 @@ import RightSideMenu from "../RightSideMenu/RightSideMenu";
 function Navbar() {
   return (
     <Container>
-      <AppBar position="fixed" sx={{ backgroundColor: "blueviolet" }}>
+      <AppBar position="static" sx={{ backgroundColor: "transparent",boxShadow:"none" }}>
         <Toolbar>
-          <Typography>Wall App</Typography>
+          <Typography sx={{color:"black"}}>Wall App</Typography>
         </Toolbar>
       </AppBar>
       <Grid container spacing={3}>
