@@ -29,8 +29,10 @@ import ShareIcon from "@mui/icons-material/Share";
 
 function NewsFeed() {
   return (
-    <Stack direction="column" sx={{mt:10}}>
-      <Paper sx={{ width: "500px", height: "100px", borderRadius: "10px", mt: 3  }}>
+    <Stack direction="column" sx={{ mt: 10 }}>
+      <Paper
+        sx={{ width: "500px", height: "100px", borderRadius: "10px", mt: 3 }}
+      >
         <Typography component="h3" variant="h6" sx={{ ml: 3 }}>
           Create Post
         </Typography>
@@ -200,7 +202,7 @@ function NewsFeed() {
             </Stack>
           </Stack>
         </Stack>
-        <Stack direction="row" sx={{mt:2}}>
+        <Stack direction="row" sx={{ mt: 2 }}>
           <Box
             component="img"
             src={person3}
@@ -213,32 +215,28 @@ function NewsFeed() {
               mt: 1,
             }}
           />
-          <Stack direction='column'>
-          <Box
-            sx={{
-              padding: " 10px 20px",
-              border: " 1px solid rgba(0, 0, 0, 0.12)",
-              borderRadius: "40px 40px 40px 0px",
-            }}
-          >
-            <img
-              src={cairo}
-              alt="Cairo"
-              style={{ width: "200px", height: "100px" }}
-            />
-          </Box>
-          <Stack direction='row' spacing={3}>
-          <Typography>
-            Like
-          </Typography>
-          <Typography>
-            Reply
-          </Typography>
-          </Stack>
+          <Stack direction="column">
+            <Box
+              sx={{
+                padding: " 10px 20px",
+                border: " 1px solid rgba(0, 0, 0, 0.12)",
+                borderRadius: "40px 40px 40px 0px",
+              }}
+            >
+              <img
+                src={cairo}
+                alt="Cairo"
+                style={{ width: "200px", height: "100px" }}
+              />
+            </Box>
+            <Stack direction="row" spacing={3}>
+              <Typography>Like</Typography>
+              <Typography>Reply</Typography>
+            </Stack>
           </Stack>
         </Stack>
       </Paper>
-      <SecondPost/>
+      <SecondPost />
     </Stack>
   );
 }

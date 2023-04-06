@@ -13,7 +13,7 @@ import WhoTOFollow from "./WhoTOFollow";
 import Users from "./Users";
 function RightSideMenu() {
   return (
-    <Stack direction="column" sx={{ mt: 8,ml:15 }}>
+    <Stack direction="column" sx={{ mt: 8, ml: 15 }}>
       <Paper
         sx={{ width: "270px", height: "250px", borderRadius: "10px", mt: 5 }}
       >
@@ -53,9 +53,9 @@ function RightSideMenu() {
           </Card>
         </Stack>
       </Paper>
-      <TrendingInIndia/>
-      <WhoTOFollow/>
-      <Users/>
+      <TrendingInIndia />
+      <WhoTOFollow />
+      <Users />
     </Stack>
   );
 }

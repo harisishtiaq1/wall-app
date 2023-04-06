@@ -61,11 +61,14 @@ function FaceBookDesign() {
           />
         </CardActionArea>
       </Card>
-      <Stack direction="row" sx={{display:'flex',alignItems:'center',justifyContent:"center"}}>
+      <Stack
+        direction="row"
+        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+      >
         <IconButton sx={{ color: "#91BCE7" }}>
           <ThumbUpOffAltIcon />
         </IconButton>
-        <Typography sx={{ color: "#91BCE7",mt:0.5 }}>Like Team</Typography>
+        <Typography sx={{ color: "#91BCE7", mt: 0.5 }}>Like Team</Typography>
       </Stack>
     </Paper>
   );
