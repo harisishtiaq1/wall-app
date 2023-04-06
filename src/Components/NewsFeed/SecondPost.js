@@ -3,6 +3,7 @@ import {
   Card,
   CardActionArea,
   CardMedia,
+  Divider,
   IconButton,
   InputBase,
   Paper,
@@ -24,8 +25,8 @@ import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 
 function SecondPost() {
   return (
-    <Paper sx={{ width: "500px", borderRadius: "10px", mt: 5 }}>
-      <Stack direction="row">
+    <Paper sx={{ width: "500px", height:"680px",borderRadius: "10px", mt: 5 }}>
+      <Stack direction="row" sx={{mt:2}}>
         <Box
           component="img"
           src={person2}
@@ -80,8 +81,8 @@ function SecondPost() {
           <Typography sx={{ color: "grey", mt: 1 }}>45 Shares</Typography>
         </Stack>
       </Stack>
-      <hr style={{ width: "90%" }} />
-      <Stack direction="row">
+      <Divider variant="middle" />
+      <Stack direction="row" sx={{ mt: 2 }}>
         <Box
           component="img"
           src={person}
@@ -89,30 +90,33 @@ function SecondPost() {
         />
         <Paper
           sx={{
-            backgroundColor: "#E1E2E3",
+            backgroundColor: "#F7F7F7",
             width: "400px",
-            height: "40px",
-            mt: 1,
+            height: "45px",
+            mt: 0.5,
             borderRadius: "50px",
+            display: "flex",
           }}
         >
           <InputBase
-            sx={{ ml: 1, flex: 1, mt: 1 }}
+            sx={{ ml: 3, flex: 1, mt: 0.5 }}
             placeholder="Write a comment"
           />
-          <IconButton sx={{ ml: 15 }}>
-            <EmojiEmotionsIcon fontSize="small" />
-          </IconButton>
-          <IconButton>
-            <AttachFileIcon fontSize="small" />
-          </IconButton>
+          <Stack direction="row">
+            <IconButton sx={{ ml: 15 }}>
+              <EmojiEmotionsIcon fontSize="small" />
+            </IconButton>
+            <IconButton>
+              <AttachFileIcon fontSize="small" />
+            </IconButton>
+          </Stack>
         </Paper>
       </Stack>
-      <hr />
-      <Typography component="h3" variant="h6" sx={{ ml: 3 }}>
+      <Divider sx={{ mt: 2 }} />
+      <Typography component="h3" variant="h6" sx={{ ml: 3, mt: 2 }}>
         Comments
       </Typography>
-      <Stack direction="row">
+      <Stack direction="row" sx={{ mt: 2 }}>
         <Box
           component="img"
           src={person1}
@@ -133,13 +137,17 @@ function SecondPost() {
               padding: "10px 20px",
             }}
           >
-            <Typography component="h4" variant="h6">
+            <Typography component="h6" variant="p">
               Wow! These Pics are So Amazing
             </Typography>
           </Box>
           <Stack direction="row" spacing={3}>
-            <Typography>Like</Typography>
-            <Typography>Reply</Typography>
+            <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+              Like
+            </Typography>
+            <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+              Reply
+            </Typography>
           </Stack>
         </Stack>
       </Stack>
@@ -167,12 +175,16 @@ function SecondPost() {
             <img
               src={cairo}
               alt="Cairo"
-              style={{ width: "200px", height: "100px" }}
+              style={{ width: "150px", height: "60px" }}
             />
           </Box>
           <Stack direction="row" spacing={3}>
-            <Typography>Like</Typography>
-            <Typography>Reply</Typography>
+            <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+              Like
+            </Typography>
+            <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+              Reply
+            </Typography>
           </Stack>
         </Stack>
       </Stack>

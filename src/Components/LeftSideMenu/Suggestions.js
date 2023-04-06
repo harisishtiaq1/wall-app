@@ -9,7 +9,7 @@ function Suggestions() {
       <Typography component="h6" variant="h6" sx={{ mt: 2, ml: 2 }}>
         Suggestions
       </Typography>
-      <Stack direction="row">
+      <Stack direction="row" sx={{mt:1}} spacing={2}>
         <Box
           component="img"
           src={suggestion}
@@ -29,7 +29,7 @@ function Suggestions() {
           </Typography>
         </Stack>
       </Stack>
-      <Stack direction="row">
+      <Stack direction="row" sx={{mt:1}} spacing={2}>
         <Box
           component="img"
           src={suggestion}
@@ -49,7 +49,7 @@ function Suggestions() {
           </Typography>
         </Stack>
       </Stack>
-      <Stack direction="row">
+      <Stack direction="row" sx={{mt:1}} spacing={2}>
         <Box
           component="img"
           src={suggestion}
@@ -69,7 +69,7 @@ function Suggestions() {
           </Typography>
         </Stack>
       </Stack>
-      <Stack direction="row">
+      <Stack direction="row" sx={{mt:1}} spacing={2}>
         <Box
           component="img"
           src={suggestion}
@@ -89,7 +89,7 @@ function Suggestions() {
           </Typography>
         </Stack>
       </Stack>
-      <Stack direction="row">
+      <Stack direction="row" sx={{mt:1}} spacing={2}>
         <Box
           component="img"
           src={suggestion}

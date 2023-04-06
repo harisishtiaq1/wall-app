@@ -8,6 +8,7 @@ import {
   Paper,
   Stack,
   Typography,
+  Divider,
 } from "@mui/material";
 import SecondPost from "./SecondPost";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
@@ -45,37 +46,45 @@ function NewsFeed() {
             />
             <Paper
               sx={{
-                backgroundColor: "#D4D5D7",
+                backgroundColor: "#F7F7F7",
                 width: "400px",
                 height: "40px",
                 mt: 1,
+                ml: 2,
                 borderRadius: "50px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
               <InputBase
-                sx={{ ml: 1, flex: 1, mt: 1 }}
+                sx={{ ml: 2, flex: 1, mt: 1 }}
                 placeholder="What's in Your Mind?"
               />
-              <IconButton>
-                <ImageIcon fontSize="small" />
-              </IconButton>
-              <IconButton>
-                <VideocamIcon fontSize="small" />
-              </IconButton>
-              <IconButton>
-                <EmojiEmotionsIcon fontSize="small" />
-              </IconButton>
-              <IconButton>
-                <Person2Icon fontSize="small" />
-              </IconButton>
-              <IconButton>
-                <SendIcon fontSize="small" />
-              </IconButton>
+              <Stack direction="row">
+                <IconButton>
+                  <ImageIcon fontSize="small" />
+                </IconButton>
+                <IconButton>
+                  <VideocamIcon fontSize="small" />
+                </IconButton>
+                <IconButton>
+                  <EmojiEmotionsIcon fontSize="small" />
+                </IconButton>
+                <IconButton>
+                  <Person2Icon fontSize="small" />
+                </IconButton>
+                <IconButton>
+                  <SendIcon fontSize="small" />
+                </IconButton>
+              </Stack>
             </Paper>
           </Stack>
         </Paper>
-        <Paper sx={{ width: "500px", borderRadius: "10px", mt: 5 }}>
-          <Stack direction="row">
+        <Paper
+          sx={{ width: "500px", height: "670px", borderRadius: "10px", mt: 5 }}
+        >
+          <Stack direction="row" sx={{ mt: 2 }}>
             <Box
               component="img"
               src={person2}
@@ -88,7 +97,7 @@ function NewsFeed() {
           <Typography component="p" variant="p" sx={{ ml: 3, mt: 2 }}>
             Beautifull Cities Of Europe...
           </Typography>
-          <Stack direction="row" sx={{ mt: 2 }}>
+          <Stack direction="row">
             <Card sx={{ maxWidth: 130, ml: 3 }}>
               <CardActionArea>
                 <CardMedia
@@ -140,39 +149,49 @@ function NewsFeed() {
               <Typography sx={{ color: "grey", mt: 1 }}>45 Shares</Typography>
             </Stack>
           </Stack>
-          <hr style={{ width: "90%" }} />
-          <Stack direction="row">
+          <Divider variant="middle" />
+          <Stack direction="row" sx={{ mt: 2 }}>
             <Box
               component="img"
               src={person}
-              sx={{ mr: 1, width: "40px", borderRadius: "50%", ml: 3, mt: 1 }}
+              sx={{
+                mr: 1,
+                width: "40px",
+                height: "40px",
+                borderRadius: "50%",
+                ml: 3,
+                mt: 1,
+              }}
             />
             <Paper
               sx={{
-                backgroundColor: "#E1E2E3",
+                backgroundColor: "#F7F7F7",
                 width: "400px",
-                height: "40px",
-                mt: 1,
+                height: "45px",
+                mt: 0.5,
                 borderRadius: "50px",
+                display: "flex",
               }}
             >
               <InputBase
-                sx={{ ml: 1, flex: 1, mt: 1 }}
+                sx={{ ml: 3, flex: 1, mt: 0.5 }}
                 placeholder="Write a comment"
               />
-              <IconButton sx={{ ml: 15 }}>
-                <EmojiEmotionsIcon fontSize="small" />
-              </IconButton>
-              <IconButton>
-                <AttachFileIcon fontSize="small" />
-              </IconButton>
+              <Stack direction="row">
+                <IconButton sx={{ ml: 15 }}>
+                  <EmojiEmotionsIcon fontSize="small" />
+                </IconButton>
+                <IconButton>
+                  <AttachFileIcon fontSize="small" />
+                </IconButton>
+              </Stack>
             </Paper>
           </Stack>
-          <hr />
-          <Typography component="h3" variant="h6" sx={{ ml: 3 }}>
+          <Divider sx={{ mt: 2 }} />
+          <Typography component="h3" variant="h6" sx={{ ml: 3, mt: 2 }}>
             Comments
           </Typography>
-          <Stack direction="row">
+          <Stack direction="row" sx={{ mt: 2 }}>
             <Box
               component="img"
               src={person1}
@@ -193,13 +212,17 @@ function NewsFeed() {
                   padding: "10px 20px",
                 }}
               >
-                <Typography component="h4" variant="h6">
+                <Typography component="h6" variant="p">
                   Wow! These Pics are So Amazing
                 </Typography>
               </Box>
               <Stack direction="row" spacing={3}>
-                <Typography>Like</Typography>
-                <Typography>Reply</Typography>
+                <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+                  Like
+                </Typography>
+                <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+                  Reply
+                </Typography>
               </Stack>
             </Stack>
           </Stack>
@@ -227,12 +250,16 @@ function NewsFeed() {
                 <img
                   src={cairo}
                   alt="Cairo"
-                  style={{ width: "200px", height: "100px" }}
+                  style={{ width: "150px", height: "60px" }}
                 />
               </Box>
               <Stack direction="row" spacing={3}>
-                <Typography>Like</Typography>
-                <Typography>Reply</Typography>
+                <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+                  Like
+                </Typography>
+                <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+                  Reply
+                </Typography>
               </Stack>
             </Stack>
           </Stack>
