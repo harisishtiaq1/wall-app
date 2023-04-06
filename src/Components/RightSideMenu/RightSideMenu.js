@@ -12,35 +12,12 @@ import TrendingInIndia from "./TrendingInIndia";
 import WhoTOFollow from "./WhoTOFollow";
 import Users from "./Users";
 import Scrollbars from "react-custom-scrollbars";
-const thumbStyle = {
-  backgroundColor: "#888",
-  borderRadius: "6px",
-  cursor: "pointer",
-  width: "8px",
-  height: "50px",
-};
 function RightSideMenu() {
   return (
-    <Scrollbars
-      style={{ width: 390, height: 500 }}
-      autoHide={true}
-      renderThumbVertical={({ style, ...props }) => (
-        <div {...props} style={{ ...style, ...thumbStyle }} />
-      )}
-    >
-      <Stack
-        direction="column"
-        sx={{
-          mt: 8,
-          ml: 15,
-          display: {
-            xs: "none",
-            sm: "block",
-          },
-        }}
-      >
+    <Scrollbars style={{ width: 390, height: 500 }} autoHide={true}>
+      <Stack direction="column" sx={{ mt: 6, ml: 15}}>
         <Paper
-          sx={{ width: "270px", height: "250px", borderRadius: "10px", mt: 7 }}
+          sx={{ width: "270px", height: "250px", borderRadius: "10px", mt: 3 }}
         >
           <Link
             href="#"
@@ -48,14 +25,14 @@ function RightSideMenu() {
             sx={{
               display: "flex",
               justifyContent: "flex-end",
-              mt: 5,
+              mt: 2,
               mr: 3,
               color: "red",
             }}
           >
             View All
           </Link>
-          <Stack direction="row">
+          <Stack direction="row" sx={{mt:2}}>
             <Card sx={{ maxWidth: 110, ml: 2 }}>
               <CardActionArea>
                 <CardMedia

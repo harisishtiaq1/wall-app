@@ -22,25 +22,26 @@ import FaceBookDesign from "./FaceBookDesign";
 import Suggestions from "./Suggestions";
 import Scrollbars from "react-custom-scrollbars";
 const thumbStyle = {
-  backgroundColor: '#888',
-  borderRadius: '6px',
-  cursor: 'pointer',
-  width: '8px',
-  height: '30px',
-  mt:8 // Set the height of the scrollbar thumb
+  backgroundColor: "#888",
+  borderRadius: "6px",
+  cursor: "pointer",
+  width: "8px",
+  height: "30px",
+  mt: 8, // Set the height of the scrollbar thumb
 };
 function SideMenu() {
   return (
-    <Scrollbars style={{ width: 350, height: 500 }} autoHide={true}
-    renderThumbVertical={({ style, ...props }) => <div {...props} style={{ ...style, ...thumbStyle }} />}>
+    <Scrollbars
+      style={{ width: 350, height: 500 }}
+      autoHide={true}
+      renderThumbVertical={({ style, ...props }) => (
+        <div {...props} style={{ ...style, ...thumbStyle }} />
+      )}
+    >
       <Stack
         direction="column"
         sx={{
-          mt: 8,
-          display: {
-            xs: "none",
-            sm: "block",
-          },
+          mt: 9,
         }}
       >
         <Paper
