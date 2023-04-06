@@ -32,7 +32,7 @@ function RightSideMenu() {
           >
             View All
           </Link>
-          <Stack direction="row" sx={{mt:2}}>
+          <Stack direction="row" sx={{mt:2}} spacing={2}>
             <Card sx={{ maxWidth: 110, ml: 2 }}>
               <CardActionArea>
                 <CardMedia

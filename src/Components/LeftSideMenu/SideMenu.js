@@ -23,16 +23,21 @@ import Suggestions from "./Suggestions";
 import Scrollbars from "react-custom-scrollbars";
 function SideMenu() {
   const thumbStyle = {
-    backgroundColor: '#888',
-    borderRadius: '6px',
-    cursor: 'pointer',
-    width: '8px',
-    height: '30px',
-    mt:8 // Set the height of the scrollbar thumb
+    backgroundColor: "#888",
+    borderRadius: "6px",
+    cursor: "pointer",
+    width: "8px",
+    height: "30px",
+    mt: 8, // Set the height of the scrollbar thumb
   };
   return (
-    <Scrollbars style={{ width: 350, height: 500 }} autoHide={true}
-    renderThumbVertical={({ style, ...props }) => <div {...props} style={{ ...style, ...thumbStyle }} />}>
+    <Scrollbars
+      style={{ width: 280, height: 500 }}
+      autoHide={true}
+      renderThumbVertical={({ style, ...props }) => (
+        <div {...props} style={{ ...style, ...thumbStyle }} />
+      )}
+    >
       <Stack
         direction="column"
         sx={{
@@ -40,7 +45,7 @@ function SideMenu() {
         }}
       >
         <Paper
-          sx={{ width: "350px", height: "500px", borderRadius: "10px", mt: 3 }}
+          sx={{ width: "280px", height: "500px", borderRadius: "15px", mt: 3 }}
         >
           <Card sx={{ maxWidth: 350 }}>
             <CardActionArea>
@@ -59,7 +64,7 @@ function SideMenu() {
               width: "84px",
               height: "84px",
               marginTop: "-42px",
-              marginLeft: "125px",
+              marginLeft: "90px",
               position: "relative",
               display: "flex",
               webkitBoxAlign: "center",

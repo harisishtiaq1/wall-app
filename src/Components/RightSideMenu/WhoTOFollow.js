@@ -57,7 +57,7 @@ function WhoTOFollow() {
         <Stack>
           <Button
             variant="outlined"
-            sx={{ borderRadius: "20px", width: "70px", mt: 1, mr: 1 }}
+            sx={{ borderRadius: "20px", width: "50px",height:"30px", mt: 1, mr: 1,fontSize:"12px" }}
           >
             Follow
           </Button>
@@ -92,7 +92,7 @@ function WhoTOFollow() {
         <Stack>
           <Button
             variant="outlined"
-            sx={{ borderRadius: "20px", width: "70px", mt: 1, mr: 1 }}
+            sx={{ borderRadius: "20px", width: "50px",height:"30px", mt: 1, mr: 1,fontSize:"12px" }}
           >
             Follow
           </Button>
@@ -127,7 +127,7 @@ function WhoTOFollow() {
         <Stack>
           <Button
             variant="outlined"
-            sx={{ borderRadius: "20px", width: "70px", mt: 1, mr: 1 }}
+            sx={{ borderRadius: "20px", width: "50px",height:"30px", mt: 1, mr: 1,fontSize:"12px" }}
           >
             Follow
           </Button>
@@ -162,7 +162,7 @@ function WhoTOFollow() {
         <Stack>
           <Button
             variant="outlined"
-            sx={{ borderRadius: "20px", width: "70px", mt: 1, mr: 1 }}
+            sx={{ borderRadius: "20px", width: "50px",height:"30px", mt: 1, mr: 1,fontSize:"12px" }}
           >
             Follow
           </Button>
@@ -197,7 +197,7 @@ function WhoTOFollow() {
         <Stack>
           <Button
             variant="outlined"
-            sx={{ borderRadius: "20px", width: "70px", mt: 1, mr: 1 }}
+            sx={{ borderRadius: "20px", width: "50px",height:"30px", mt: 1, mr: 1,fontSize:"12px" }}
           >
             Follow
           </Button>
@@ -232,7 +232,7 @@ function WhoTOFollow() {
         <Stack>
           <Button
             variant="outlined"
-            sx={{ borderRadius: "20px", width: "70px", mt: 1, mr: 1 }}
+            sx={{ borderRadius: "20px", width: "50px",height:"30px", mt: 1, mr: 1,fontSize:"12px" }}
           >
             Follow
           </Button>

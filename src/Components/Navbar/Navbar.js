@@ -12,14 +12,14 @@ function Navbar() {
           <Typography>Wall App</Typography>
         </Toolbar>
       </AppBar>
-      <Grid container spacing={4}>
-        <Grid item xs={12} sm={4}>
+      <Grid container spacing={3}>
+        <Grid item xs={12} sm={3}>
           <SideMenu />
         </Grid>
         <Grid item xs={12} sm={4}>
           <NewsFeed />
         </Grid>
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={5}>
           <RightSideMenu />
         </Grid>
       </Grid>

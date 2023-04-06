@@ -4,12 +4,12 @@ import suggestion from "../../assets/suggestion.png";
 function Suggestions() {
   return (
     <Paper
-      sx={{ width: "350px", height: "450px", borderRadius: "10px", mt: 5 }}
+      sx={{ width: "280px", height: "450px", borderRadius: "10px", mt: 5 }}
     >
       <Typography component="h6" variant="h6" sx={{ mt: 2, ml: 2 }}>
         Suggestions
       </Typography>
-      <Stack direction="row" sx={{mt:1}} spacing={2}>
+      <Stack direction="row" sx={{ mt: 1 }} spacing={2}>
         <Box
           component="img"
           src={suggestion}
@@ -24,12 +24,12 @@ function Suggestions() {
         />
         <Stack direction="column">
           <Typography>FaceBook Design</Typography>
-          <Typography>
+          <Typography sx={{ fontSize: "13px" }}>
             It is a long established fact that a user will be diverted
           </Typography>
         </Stack>
       </Stack>
-      <Stack direction="row" sx={{mt:1}} spacing={2}>
+      <Stack direction="row" sx={{ mt: 1 }} spacing={2}>
         <Box
           component="img"
           src={suggestion}
@@ -44,12 +44,12 @@ function Suggestions() {
         />
         <Stack direction="column">
           <Typography>React Developers</Typography>
-          <Typography>
+          <Typography sx={{ fontSize: "13px" }}>
             It is a long established fact that a user will be diverted
           </Typography>
         </Stack>
       </Stack>
-      <Stack direction="row" sx={{mt:1}} spacing={2}>
+      <Stack direction="row" sx={{ mt: 1 }} spacing={2}>
         <Box
           component="img"
           src={suggestion}
@@ -64,12 +64,12 @@ function Suggestions() {
         />
         <Stack direction="column">
           <Typography>Buy & Sell</Typography>
-          <Typography>
+          <Typography sx={{ fontSize: "13px" }}>
             It is a long established fact that a user will be diverted
           </Typography>
         </Stack>
       </Stack>
-      <Stack direction="row" sx={{mt:1}} spacing={2}>
+      <Stack direction="row" sx={{ mt: 1 }} spacing={2}>
         <Box
           component="img"
           src={suggestion}
@@ -84,12 +84,12 @@ function Suggestions() {
         />
         <Stack direction="column">
           <Typography>All about travel</Typography>
-          <Typography>
+          <Typography sx={{ fontSize: "13px" }}>
             It is a long established fact that a user will be diverted
           </Typography>
         </Stack>
       </Stack>
-      <Stack direction="row" sx={{mt:1}} spacing={2}>
+      <Stack direction="row" sx={{ mt: 1 }} spacing={2}>
         <Box
           component="img"
           src={suggestion}
@@ -104,7 +104,7 @@ function Suggestions() {
         />
         <Stack direction="column">
           <Typography>JavaScript Lovers</Typography>
-          <Typography>
+          <Typography sx={{ fontSize: "13px" }}>
             It is a long established fact that a user will be diverted
           </Typography>
         </Stack>

@@ -9,7 +9,7 @@ import PublicIcon from "@mui/icons-material/Public";
 function Details() {
   return (
     <Paper
-      sx={{ width: "350px", height: "400px", borderRadius: "10px", mt: 5 }}
+      sx={{ width: "280px", height: "400px", borderRadius: "10px", mt: 5 }}
     >
       <Stack direction="row" sx={{ ml: 2, mt: 2 }} spacing={2}>
         <IconButton>

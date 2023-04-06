@@ -16,7 +16,7 @@ import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 function FaceBookDesign() {
   return (
     <Paper
-      sx={{ width: "350px", height: "350px", borderRadius: "10px", mt: 5 }}
+      sx={{ width: "280px", height: "350px", borderRadius: "10px", mt: 5 }}
     >
       <Link
         href="#"
