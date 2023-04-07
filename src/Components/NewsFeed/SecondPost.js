@@ -49,9 +49,7 @@ function SecondPost() {
     }
   };
   return (
-    <Paper
-      sx={{ width: "500px", borderRadius: "10px", mt: 5 }}
-    >
+    <Paper sx={{ width: "500px", borderRadius: "10px", mt: 5 }}>
       <Stack direction="row" sx={{ mt: 2 }}>
         <Box
           component="img"
@@ -235,45 +233,45 @@ function SecondPost() {
         </Stack>
       </Stack>
       {entries &&
-            entries.map((Entry, index) => {
-              return (
-                <Stack direction="row" sx={{ mt: 2 }}>
-                  <Box
-                    component="img"
-                    src={person1}
-                    sx={{
-                      mr: 1,
-                      width: "40px",
-                      height: "40px",
-                      borderRadius: "50%",
-                      ml: 3,
-                      mt: 1,
-                    }}
-                  />
-                  <Stack direction="column">
-                    <Box
-                      sx={{
-                        border: "1px solid rgba(0, 0, 0, 0.12)",
-                        borderRadius: "40px 40px 40px 0px",
-                        padding: "10px 20px",
-                      }}
-                    >
-                      <Typography component="h6" variant="p">
-                        {Entry}
-                      </Typography>
-                    </Box>
-                    <Stack direction="row" spacing={3}>
-                      <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
-                        Like
-                      </Typography>
-                      <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
-                        Reply
-                      </Typography>
-                    </Stack>
-                  </Stack>
+        entries.map((Entry, index) => {
+          return (
+            <Stack direction="row" sx={{ mt: 2 }}>
+              <Box
+                component="img"
+                src={person1}
+                sx={{
+                  mr: 1,
+                  width: "40px",
+                  height: "40px",
+                  borderRadius: "50%",
+                  ml: 3,
+                  mt: 1,
+                }}
+              />
+              <Stack direction="column">
+                <Box
+                  sx={{
+                    border: "1px solid rgba(0, 0, 0, 0.12)",
+                    borderRadius: "40px 40px 40px 0px",
+                    padding: "10px 20px",
+                  }}
+                >
+                  <Typography component="h6" variant="p">
+                    {Entry}
+                  </Typography>
+                </Box>
+                <Stack direction="row" spacing={3}>
+                  <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+                    Like
+                  </Typography>
+                  <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+                    Reply
+                  </Typography>
                 </Stack>
-              );
-            })}
+              </Stack>
+            </Stack>
+          );
+        })}
     </Paper>
   );
 }

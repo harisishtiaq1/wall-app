@@ -15,7 +15,7 @@ function Details() {
         <IconButton>
           <Person2Icon fontSize="small" />
         </IconButton>
-        <Typography sx={{ color: "grey", fontSize: "12px",mt:4 }}>
+        <Typography sx={{ color: "grey", fontSize: "12px", mt: 4 }}>
           191 Main St, Bar Harbor, ME 04609, United States
         </Typography>
       </Stack>
@@ -23,7 +23,7 @@ function Details() {
         <IconButton>
           <LocalPhoneIcon fontSize="small" />
         </IconButton>
-        <Typography  sx={{ color: "grey", fontSize: "12px",mt:2 }}>
+        <Typography sx={{ color: "grey", fontSize: "12px", mt: 2 }}>
           092654 60634
         </Typography>
       </Stack>
@@ -31,7 +31,7 @@ function Details() {
         <IconButton>
           <EmailIcon fontSize="small" />
         </IconButton>
-        <Typography  sx={{ color: "grey", fontSize: "12px",mt:2 }}>
+        <Typography sx={{ color: "grey", fontSize: "12px", mt: 2 }}>
           ericbrickey@gmail.com
         </Typography>
       </Stack>
@@ -39,7 +39,7 @@ function Details() {
         <IconButton>
           <InfoIcon fontSize="small" />
         </IconButton>
-        <Typography  sx={{ color: "grey", fontSize: "12px",mt:2 }}>
+        <Typography sx={{ color: "grey", fontSize: "12px", mt: 2 }}>
           Edit description
         </Typography>
       </Stack>
@@ -47,7 +47,7 @@ function Details() {
         <IconButton fontSize="small">
           <ThumbUpOffAltIcon />
         </IconButton>
-        <Typography  sx={{ color: "grey", fontSize: "12px",mt:2 }}>
+        <Typography sx={{ color: "grey", fontSize: "12px", mt: 2 }}>
           331 people like this
         </Typography>
       </Stack>
@@ -55,7 +55,7 @@ function Details() {
         <IconButton fontSize="small">
           <PublicIcon />
         </IconButton>
-        <Typography  sx={{ color: "grey", fontSize: "12px",mt:2 }}>
+        <Typography sx={{ color: "grey", fontSize: "12px", mt: 2 }}>
           https://www.crema.com
         </Typography>
       </Stack>

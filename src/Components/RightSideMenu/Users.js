@@ -10,7 +10,7 @@ function Users() {
       sx={{ width: "270px", height: "300px", borderRadius: "10px", mt: 5 }}
     >
       <Link
-        href="#"
+        href="/"
         underline="none"
         sx={{
           display: "flex",

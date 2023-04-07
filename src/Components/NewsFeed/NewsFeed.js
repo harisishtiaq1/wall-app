@@ -43,12 +43,12 @@ function NewsFeed() {
       setComments("");
     }
     console.log("comments", comments);
-    if(comments){
-      return  toast.success("Your Post Has Been Updated Sucessfully", {
+    if (comments) {
+      return toast.success("Your Post Has Been Updated Sucessfully", {
         position: "bottom-right",
         autoClose: 3000,
         toastClassName: "my-toast",
-      bodyClassName: "my-toast-body"
+        bodyClassName: "my-toast-body",
       });
     }
   };
@@ -209,7 +209,6 @@ function NewsFeed() {
                     handleButtonClick(comments);
                   }
                 }}
-
               />
               <Stack direction="row">
                 <IconButton>
@@ -218,19 +217,19 @@ function NewsFeed() {
                 <IconButton>
                   <AttachFileIcon fontSize="small" />
                 </IconButton>
-                {comments && comments.length > 0 ?(
-                <IconButton
-                  onClick={handleButtonClick}
-                  onChange={handleChange}
-                  checked={checked}
-                >
-                  <SendIcon fontSize="small" />
-                </IconButton>):(
-                <IconButton
-                disabled
-                >
-                  <SendIcon fontSize="small" />
-                </IconButton>)}
+                {comments && comments.length > 0 ? (
+                  <IconButton
+                    onClick={handleButtonClick}
+                    onChange={handleChange}
+                    checked={checked}
+                  >
+                    <SendIcon fontSize="small" />
+                  </IconButton>
+                ) : (
+                  <IconButton disabled>
+                    <SendIcon fontSize="small" />
+                  </IconButton>
+                )}
               </Stack>
             </Paper>
           </Stack>
