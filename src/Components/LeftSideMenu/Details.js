@@ -13,49 +13,49 @@ function Details() {
     >
       <Stack direction="row" sx={{ ml: 2, mt: 2 }} spacing={2}>
         <IconButton>
-          <Person2Icon />
+          <Person2Icon fontSize="small" />
         </IconButton>
-        <Typography width={200} sx={{ color: "grey", mt: "12px" }}>
+        <Typography sx={{ color: "grey", fontSize: "12px",mt:4 }}>
           191 Main St, Bar Harbor, ME 04609, United States
         </Typography>
       </Stack>
       <Stack direction="row" sx={{ ml: 2, mt: 2 }} spacing={2}>
         <IconButton>
-          <LocalPhoneIcon />
+          <LocalPhoneIcon fontSize="small" />
         </IconButton>
-        <Typography width={200} sx={{ color: "grey", mt: "12px" }}>
+        <Typography  sx={{ color: "grey", fontSize: "12px",mt:2 }}>
           092654 60634
         </Typography>
       </Stack>
       <Stack direction="row" sx={{ ml: 2, mt: 2 }} spacing={2}>
         <IconButton>
-          <EmailIcon />
+          <EmailIcon fontSize="small" />
         </IconButton>
-        <Typography width={200} sx={{ color: "grey", mt: "12px" }}>
+        <Typography  sx={{ color: "grey", fontSize: "12px",mt:2 }}>
           ericbrickey@gmail.com
         </Typography>
       </Stack>
       <Stack direction="row" sx={{ ml: 2, mt: 2 }} spacing={2}>
         <IconButton>
-          <InfoIcon />
+          <InfoIcon fontSize="small" />
         </IconButton>
-        <Typography width={200} sx={{ color: "grey", mt: "12px" }}>
+        <Typography  sx={{ color: "grey", fontSize: "12px",mt:2 }}>
           Edit description
         </Typography>
       </Stack>
       <Stack direction="row" sx={{ ml: 2, mt: 2 }} spacing={2}>
-        <IconButton>
+        <IconButton fontSize="small">
           <ThumbUpOffAltIcon />
         </IconButton>
-        <Typography width={200} sx={{ color: "grey", mt: "12px" }}>
+        <Typography  sx={{ color: "grey", fontSize: "12px",mt:2 }}>
           331 people like this
         </Typography>
       </Stack>
       <Stack direction="row" sx={{ ml: 2, mt: 2 }} spacing={2}>
-        <IconButton>
+        <IconButton fontSize="small">
           <PublicIcon />
         </IconButton>
-        <Typography width={200} sx={{ color: "grey", mt: "12px" }}>
+        <Typography  sx={{ color: "grey", fontSize: "12px",mt:2 }}>
           https://www.crema.com
         </Typography>
       </Stack>

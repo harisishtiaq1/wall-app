@@ -92,13 +92,21 @@ function SideMenu() {
             direction="column"
             sx={{ display: "flex", alignItems: "center" }}
           >
-            <Typography component="h3" variant="h6">
+            <Typography component="h3" variant="h6" sx={{ fontSize: "16px" }}>
               Eric Brickey
             </Typography>
-            <Typography component="p" variant="p" sx={{ color: "grey" }}>
+            <Typography
+              component="p"
+              variant="p"
+              sx={{ color: "grey", fontSize: "14px" }}
+            >
               Oslo,Norway
             </Typography>
-            <Typography component="h3" variant="p" sx={{ mt: 2 }}>
+            <Typography
+              component="h3"
+              variant="p"
+              sx={{ mt: 2, fontSize: "13px" }}
+            >
               8 Mutual Friends
             </Typography>
             <AvatarGroup sx={{ mt: 3 }}>

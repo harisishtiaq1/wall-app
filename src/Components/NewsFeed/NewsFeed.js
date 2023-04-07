@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 import {
   Box,
   Card,
@@ -11,6 +11,7 @@ import {
   Typography,
   Divider,
 } from "@mui/material";
+import { toast } from "react-hot-toast";
 import SecondPost from "./SecondPost";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import ImageIcon from "@mui/icons-material/Image";
@@ -29,19 +30,28 @@ import CommentIcon from "@mui/icons-material/Comment";
 import ShareIcon from "@mui/icons-material/Share";
 import Scrollbars from "react-custom-scrollbars";
 function NewsFeed() {
+  const [checked, setChecked] = React.useState(true);
+  const handleChange = () => {
+    setChecked((prev) => !prev);
+  };
   const [comments, setComments] = useState([]);
+  const [entries, setEntries] = useState([]);
 
   const handleButtonClick = (Entry) => {
     if (Entry) {
-      setComments((prevState) => [Entry, ...prevState]);
+      setEntries((prevState) => [...prevState, comments]);
       setComments("");
     }
     console.log("comments", comments);
+    if(comments){
+      return  toast.success("Your Post Has Been Updated Sucessfully", {
+        position: "bottom-right",
+        autoClose: 3000,
+        toastClassName: "my-toast",
+      bodyClassName: "my-toast-body"
+      });
+    }
   };
-  useEffect(() => {
-    localStorage.setItem("Entries", JSON.stringify(comments));
-  }, [comments]);
-
   return (
     <Scrollbars style={{ width: 500, height: 490 }} autoHide={true}>
       <Stack direction="column">
@@ -194,6 +204,12 @@ function NewsFeed() {
                 placeholder="Write a comment"
                 value={comments}
                 onChange={(event) => setComments(event.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    handleButtonClick(comments);
+                  }
+                }}
+
               />
               <Stack direction="row">
                 <IconButton>
@@ -202,9 +218,19 @@ function NewsFeed() {
                 <IconButton>
                   <AttachFileIcon fontSize="small" />
                 </IconButton>
-                <IconButton onClick={handleButtonClick}>
+                {comments && comments.length > 0 ?(
+                <IconButton
+                  onClick={handleButtonClick}
+                  onChange={handleChange}
+                  checked={checked}
+                >
                   <SendIcon fontSize="small" />
-                </IconButton>
+                </IconButton>):(
+                <IconButton
+                disabled
+                >
+                  <SendIcon fontSize="small" />
+                </IconButton>)}
               </Stack>
             </Paper>
           </Stack>
@@ -284,45 +310,46 @@ function NewsFeed() {
               </Stack>
             </Stack>
           </Stack>
-          {Array.isArray(comments) &&
-            comments.length > 0 &&
-            comments.map((comment, index) => (
-              <Stack direction="row" sx={{ mt: 2 }}>
-                <Box
-                  component="img"
-                  src={person1}
-                  sx={{
-                    mr: 1,
-                    width: "40px",
-                    height: "40px",
-                    borderRadius: "50%",
-                    ml: 3,
-                    mt: 1,
-                  }}
-                />
-                <Stack direction="column">
+          {entries &&
+            entries.map((Entry, index) => {
+              return (
+                <Stack direction="row" sx={{ mt: 2 }}>
                   <Box
+                    component="img"
+                    src={person1}
                     sx={{
-                      border: "1px solid rgba(0, 0, 0, 0.12)",
-                      borderRadius: "40px 40px 40px 0px",
-                      padding: "10px 20px",
+                      mr: 1,
+                      width: "40px",
+                      height: "40px",
+                      borderRadius: "50%",
+                      ml: 3,
+                      mt: 1,
                     }}
-                  >
-                    <Typography component="h6" variant="p">
-                      {comment}
-                    </Typography>
-                  </Box>
-                  <Stack direction="row" spacing={3}>
-                    <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
-                      Like
-                    </Typography>
-                    <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
-                      Reply
-                    </Typography>
+                  />
+                  <Stack direction="column">
+                    <Box
+                      sx={{
+                        border: "1px solid rgba(0, 0, 0, 0.12)",
+                        borderRadius: "40px 40px 40px 0px",
+                        padding: "10px 20px",
+                      }}
+                    >
+                      <Typography component="h6" variant="p">
+                        {Entry}
+                      </Typography>
+                    </Box>
+                    <Stack direction="row" spacing={3}>
+                      <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+                        Like
+                      </Typography>
+                      <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+                        Reply
+                      </Typography>
+                    </Stack>
                   </Stack>
                 </Stack>
-              </Stack>
-            ))}
+              );
+            })}
         </Paper>
         <SecondPost />
       </Stack>

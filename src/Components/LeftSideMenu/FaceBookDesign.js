@@ -45,10 +45,10 @@ function FaceBookDesign() {
           }}
         />
         <Stack direction="column">
-          <Typography component="h6" variant="h6">
+          <Typography component="h6" variant="h6" sx={{fontSize:"15px"}}>
             FaceBook Design
           </Typography>
-          <Typography>Product Design</Typography>
+          <Typography sx={{fontSize:'12px'}}>Product Design</Typography>
         </Stack>
       </Stack>
       <Card sx={{ maxWidth: 350, mt: 4 }}>
@@ -66,9 +66,9 @@ function FaceBookDesign() {
         sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
       >
         <IconButton sx={{ color: "#91BCE7" }}>
-          <ThumbUpOffAltIcon />
+          <ThumbUpOffAltIcon  fontSize="small"/>
         </IconButton>
-        <Typography sx={{ color: "#91BCE7", mt: 0.5 }}>Like Team</Typography>
+        <Typography sx={{ color: "#91BCE7",fontSize:"14px" }}>Like Team</Typography>
       </Stack>
     </Paper>
   );

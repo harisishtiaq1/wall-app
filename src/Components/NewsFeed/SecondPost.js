@@ -10,7 +10,9 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import SendIcon from "@mui/icons-material/Send";
+import { toast } from "react-hot-toast";
 import person from "../../assets/A1.jpg";
 import person1 from "../../assets/A2.jpg";
 import person2 from "../../assets/A3.jpg";
@@ -24,9 +26,31 @@ import AttachFileIcon from "@mui/icons-material/AttachFile";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 
 function SecondPost() {
+  const [checked, setChecked] = React.useState(true);
+  const handleChange = () => {
+    setChecked((prev) => !prev);
+  };
+  const [comments, setComments] = useState([]);
+  const [entries, setEntries] = useState([]);
+
+  const handleButtonClick = (Entry) => {
+    if (Entry) {
+      setEntries((prevState) => [...prevState, comments]);
+      setComments("");
+    }
+    console.log("comments", comments);
+    if (comments) {
+      return toast.success("Your Post Has Been Updated Sucessfully", {
+        position: "bottom-right",
+        autoClose: 3000,
+        toastClassName: "my-toast",
+        bodyClassName: "my-toast-body",
+      });
+    }
+  };
   return (
     <Paper
-      sx={{ width: "500px", height: "680px", borderRadius: "10px", mt: 5 }}
+      sx={{ width: "500px", borderRadius: "10px", mt: 5 }}
     >
       <Stack direction="row" sx={{ mt: 2 }}>
         <Box
@@ -103,6 +127,13 @@ function SecondPost() {
           <InputBase
             sx={{ ml: 3, flex: 1, mt: 0.5 }}
             placeholder="Write a comment"
+            value={comments}
+            onChange={(event) => setComments(event.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                handleButtonClick(comments);
+              }
+            }}
           />
           <Stack direction="row">
             <IconButton sx={{ ml: 15 }}>
@@ -111,6 +142,19 @@ function SecondPost() {
             <IconButton>
               <AttachFileIcon fontSize="small" />
             </IconButton>
+            {comments && comments.length > 0 ? (
+              <IconButton
+                onClick={handleButtonClick}
+                onChange={handleChange}
+                checked={checked}
+              >
+                <SendIcon fontSize="small" />
+              </IconButton>
+            ) : (
+              <IconButton disabled>
+                <SendIcon fontSize="small" />
+              </IconButton>
+            )}
           </Stack>
         </Paper>
       </Stack>
@@ -190,6 +234,46 @@ function SecondPost() {
           </Stack>
         </Stack>
       </Stack>
+      {entries &&
+            entries.map((Entry, index) => {
+              return (
+                <Stack direction="row" sx={{ mt: 2 }}>
+                  <Box
+                    component="img"
+                    src={person1}
+                    sx={{
+                      mr: 1,
+                      width: "40px",
+                      height: "40px",
+                      borderRadius: "50%",
+                      ml: 3,
+                      mt: 1,
+                    }}
+                  />
+                  <Stack direction="column">
+                    <Box
+                      sx={{
+                        border: "1px solid rgba(0, 0, 0, 0.12)",
+                        borderRadius: "40px 40px 40px 0px",
+                        padding: "10px 20px",
+                      }}
+                    >
+                      <Typography component="h6" variant="p">
+                        {Entry}
+                      </Typography>
+                    </Box>
+                    <Stack direction="row" spacing={3}>
+                      <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+                        Like
+                      </Typography>
+                      <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+                        Reply
+                      </Typography>
+                    </Stack>
+                  </Stack>
+                </Stack>
+              );
+            })}
     </Paper>
   );
 }
