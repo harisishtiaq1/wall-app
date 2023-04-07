@@ -1,3 +1,4 @@
+import React, { useState,useEffect } from "react";
 import {
   Box,
   Card,
@@ -17,7 +18,6 @@ import VideocamIcon from "@mui/icons-material/Videocam";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 import Person2Icon from "@mui/icons-material/Person2";
 import SendIcon from "@mui/icons-material/Send";
-import React from "react";
 import person from "../../assets/A1.jpg";
 import person1 from "../../assets/A2.jpg";
 import person2 from "../../assets/A5.jpg";
@@ -29,6 +29,19 @@ import CommentIcon from "@mui/icons-material/Comment";
 import ShareIcon from "@mui/icons-material/Share";
 import Scrollbars from "react-custom-scrollbars";
 function NewsFeed() {
+  const [comments, setComments] = useState([]);
+
+  const handleButtonClick = (Entry) => {
+    if (Entry) {
+      setComments((prevState) => [Entry, ...prevState]);
+      setComments("");
+    }
+    console.log("comments", comments);
+  };
+  useEffect(() => {
+    localStorage.setItem("Entries", JSON.stringify(comments));
+  }, [comments]);
+
   return (
     <Scrollbars style={{ width: 500, height: 490 }} autoHide={true}>
       <Stack direction="column">
@@ -80,7 +93,12 @@ function NewsFeed() {
           </Stack>
         </Paper>
         <Paper
-          sx={{ width: "500px", height: "670px", borderRadius: "10px", mt: 5 }}
+          sx={{
+            width: "500px",
+            paddingBottom: "20px",
+            borderRadius: "10px",
+            mt: 5,
+          }}
         >
           <Stack direction="row" sx={{ mt: 2 }}>
             <Box
@@ -174,13 +192,18 @@ function NewsFeed() {
               <InputBase
                 sx={{ ml: 3, flex: 1, mt: 0.5 }}
                 placeholder="Write a comment"
+                value={comments}
+                onChange={(event) => setComments(event.target.value)}
               />
               <Stack direction="row">
-                <IconButton sx={{ ml: 15 }}>
+                <IconButton>
                   <EmojiEmotionsIcon fontSize="small" />
                 </IconButton>
                 <IconButton>
                   <AttachFileIcon fontSize="small" />
+                </IconButton>
+                <IconButton onClick={handleButtonClick}>
+                  <SendIcon fontSize="small" />
                 </IconButton>
               </Stack>
             </Paper>
@@ -261,6 +284,45 @@ function NewsFeed() {
               </Stack>
             </Stack>
           </Stack>
+          {Array.isArray(comments) &&
+            comments.length > 0 &&
+            comments.map((comment, index) => (
+              <Stack direction="row" sx={{ mt: 2 }}>
+                <Box
+                  component="img"
+                  src={person1}
+                  sx={{
+                    mr: 1,
+                    width: "40px",
+                    height: "40px",
+                    borderRadius: "50%",
+                    ml: 3,
+                    mt: 1,
+                  }}
+                />
+                <Stack direction="column">
+                  <Box
+                    sx={{
+                      border: "1px solid rgba(0, 0, 0, 0.12)",
+                      borderRadius: "40px 40px 40px 0px",
+                      padding: "10px 20px",
+                    }}
+                  >
+                    <Typography component="h6" variant="p">
+                      {comment}
+                    </Typography>
+                  </Box>
+                  <Stack direction="row" spacing={3}>
+                    <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+                      Like
+                    </Typography>
+                    <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+                      Reply
+                    </Typography>
+                  </Stack>
+                </Stack>
+              </Stack>
+            ))}
         </Paper>
         <SecondPost />
       </Stack>
