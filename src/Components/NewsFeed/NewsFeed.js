@@ -52,10 +52,13 @@ function NewsFeed() {
     const files = event.target.files;
     setImageEntries((prevState) => [...prevState, ...files]);
     setAttachedImage(files);
-    console.log("files", files);
-    console.log("attached Image", attachedImage);
+    if (typeof files === "object" && files !== null) {
+      console.log("myFunction returns an object");
+    } else {
+      console.log("myFunction does not return an object");
+    }
+    console.log("files", files, imageEntries);
   };
-
   const handleButtonClick = () => {
     setEntries((prevState) => [...prevState, { type: "text", text: comments }]);
     setComments("");
@@ -575,9 +578,9 @@ function NewsFeed() {
                       border: " 1px solid rgba(0, 0, 0, 0.12)",
                       borderRadius: "40px 40px 40px 0px",
                     }}
+                    key={`image-entry-${index}`}
                   >
                     <img
-                      key={`image-entry-${index}`}
                       src={URL.createObjectURL(image)}
                       alt={image.name}
                       style={{ width: "150px", height: "100px" }}
@@ -591,49 +594,45 @@ function NewsFeed() {
                       Reply
                     </Typography>
                   </Stack>
-                  {entries
-                    .filter((entry) => entry.type === "text")
-                    .map((entry, subIndex) => (
-                      <Stack direction="row" sx={{ mt: 2 }}>
-                        <Box
-                          component="img"
-                          src={person1}
-                          sx={{
-                            mr: 1,
-                            width: "40px",
-                            height: "40px",
-                            borderRadius: "50%",
-                            ml: 3,
-                            mt: 1,
-                          }}
-                        />
-                        <Stack direction="column">
-                          <Box
-                            sx={{
-                              border: "1px solid rgba(0, 0, 0, 0.12)",
-                              borderRadius: "40px 40px 40px 0px",
-                              padding: "10px 20px",
-                            }}
-                          >
-                            <Typography component="h6" variant="p">
-                              {entry.text}
-                            </Typography>
-                          </Box>
-                          <Stack direction="row" spacing={3}>
-                            <Typography
-                              sx={{ cursor: "pointer", fontSize: "15px" }}
-                            >
-                              Like
-                            </Typography>
-                            <Typography
-                              sx={{ cursor: "pointer", fontSize: "15px" }}
-                            >
-                              Reply
-                            </Typography>
-                          </Stack>
-                        </Stack>
-                      </Stack>
-                    ))}
+                </Stack>
+              </Stack>
+            ))}
+          {entries
+            .filter((entry) => entry.type === "text")
+            .map((entry) => (
+              <Stack direction="row" sx={{ mt: 2 }}>
+                <Box
+                  component="img"
+                  src={person1}
+                  sx={{
+                    mr: 1,
+                    width: "40px",
+                    height: "40px",
+                    borderRadius: "50%",
+                    ml: 3,
+                    mt: 1,
+                  }}
+                />
+                <Stack direction="column">
+                  <Box
+                    sx={{
+                      border: "1px solid rgba(0, 0, 0, 0.12)",
+                      borderRadius: "40px 40px 40px 0px",
+                      padding: "10px 20px",
+                    }}
+                  >
+                    <Typography component="h6" variant="p">
+                      {entry.text}
+                    </Typography>
+                  </Box>
+                  <Stack direction="row" spacing={3}>
+                    <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+                      Like
+                    </Typography>
+                    <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+                      Reply
+                    </Typography>
+                  </Stack>
                 </Stack>
               </Stack>
             ))}
