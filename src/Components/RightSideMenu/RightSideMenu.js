@@ -17,8 +17,8 @@ function RightSideMenu() {
     backgroundColor: "#888",
     borderRadius: "6px",
     cursor: "pointer",
-    width: "8px",
-    height: "30px",
+    width: "4px",
+    height: "20px",
     mt: 8, // Set the height of the scrollbar thumb
   };
   return (

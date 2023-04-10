@@ -94,7 +94,7 @@ function NewsFeed() {
     backgroundColor: "#888",
     borderRadius: "6px",
     cursor: "pointer",
-    width: "8px",
+    width: "4px",
     height: "30px",
     mt: 8, // Set the height of the scrollbar thumb
   };
