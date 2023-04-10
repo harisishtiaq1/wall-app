@@ -51,7 +51,7 @@ function NewsFeed() {
     setImageEntries((prevState) => [...prevState, ...files]);
     setAttachedImage(files);
     console.log(attachedImage);
-    if(files){
+    if (files) {
       return toast.success("Your Post Has Been Updated Sucessfully", {
         position: "bottom-right",
         autoClose: 3000,
