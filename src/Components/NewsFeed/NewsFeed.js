@@ -42,7 +42,6 @@ function NewsFeed() {
   const [comments, setComments] = useState("");
   const [postComments, setPostComments] = useState([]);
   const [post, setPost] = useState([]);
-  const [entries, setEntries] = useState([]);
   const [newEntries, setNewEntries] = useState([]);
   const [postEntries, setPostEntries] = useState([]);
   const [attachedImage, setAttachedImage] = useState(null);
@@ -52,18 +51,11 @@ function NewsFeed() {
     const files = event.target.files;
     setImageEntries((prevState) => [...prevState, ...files]);
     setAttachedImage(files);
-    if (typeof files === "object" && files !== null) {
-      console.log("myFunction returns an object");
-    } else {
-      console.log("myFunction does not return an object");
-    }
-    console.log("files", files, imageEntries);
+    console.log(attachedImage);
   };
   const handleButtonClick = () => {
-    setEntries((prevState) => [...prevState, { type: "text", text: comments }]);
+    setImageEntries((prevState) => [...prevState, comments]);
     setComments("");
-
-    console.log("comments", comments);
     if (comments) {
       return toast.success("Your Post Has Been Updated Sucessfully", {
         position: "bottom-right",
@@ -557,85 +549,84 @@ function NewsFeed() {
             </Stack>
           </Stack>
           {imageEntries &&
-            imageEntries.map((image, index) => (
-              <Stack direction="row" sx={{ mt: 2 }}>
-                <Box
-                  component="img"
-                  src={person3}
-                  sx={{
-                    mr: 1,
-                    width: "40px",
-                    height: "40px",
-                    borderRadius: "50%",
-                    ml: 3,
-                    mt: 1,
-                  }}
-                />
-                <Stack direction="column">
+            imageEntries.map((item, index) =>
+              typeof item === "string" ? (
+                <Stack direction="row" sx={{ mt: 2 }}>
                   <Box
+                    component="img"
+                    src={person1}
                     sx={{
-                      padding: " 20px 20px",
-                      border: " 1px solid rgba(0, 0, 0, 0.12)",
-                      borderRadius: "40px 40px 40px 0px",
+                      mr: 1,
+                      width: "40px",
+                      height: "40px",
+                      borderRadius: "50%",
+                      ml: 3,
+                      mt: 1,
                     }}
-                    key={`image-entry-${index}`}
-                  >
-                    <img
-                      src={URL.createObjectURL(image)}
-                      alt={image.name}
-                      style={{ width: "150px", height: "100px" }}
-                    />
-                  </Box>
-                  <Stack direction="row" spacing={3}>
-                    <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
-                      Like
-                    </Typography>
-                    <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
-                      Reply
-                    </Typography>
+                  />
+                  <Stack direction="column">
+                    <Box
+                      sx={{
+                        border: "1px solid rgba(0, 0, 0, 0.12)",
+                        borderRadius: "40px 40px 40px 0px",
+                        padding: "10px 20px",
+                      }}
+                    >
+                      <Typography component="h6" variant="p">
+                        {item}
+                      </Typography>
+                    </Box>
+                    <Stack direction="row" spacing={3}>
+                      <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+                        Like
+                      </Typography>
+                      <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+                        Reply
+                      </Typography>
+                    </Stack>
                   </Stack>
                 </Stack>
-              </Stack>
-            ))}
-          {entries
-            .filter((entry) => entry.type === "text")
-            .map((entry) => (
-              <Stack direction="row" sx={{ mt: 2 }}>
-                <Box
-                  component="img"
-                  src={person1}
-                  sx={{
-                    mr: 1,
-                    width: "40px",
-                    height: "40px",
-                    borderRadius: "50%",
-                    ml: 3,
-                    mt: 1,
-                  }}
-                />
-                <Stack direction="column">
+              ) : (
+                <Stack direction="row" sx={{ mt: 2 }}>
                   <Box
+                    component="img"
+                    src={person3}
                     sx={{
-                      border: "1px solid rgba(0, 0, 0, 0.12)",
-                      borderRadius: "40px 40px 40px 0px",
-                      padding: "10px 20px",
+                      mr: 1,
+                      width: "40px",
+                      height: "40px",
+                      borderRadius: "50%",
+                      ml: 3,
+                      mt: 1,
                     }}
-                  >
-                    <Typography component="h6" variant="p">
-                      {entry.text}
-                    </Typography>
-                  </Box>
-                  <Stack direction="row" spacing={3}>
-                    <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
-                      Like
-                    </Typography>
-                    <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
-                      Reply
-                    </Typography>
+                  />
+                  <Stack direction="column">
+                    <Box
+                      sx={{
+                        padding: " 20px 20px",
+                        border: " 1px solid rgba(0, 0, 0, 0.12)",
+                        borderRadius: "40px 40px 40px 0px",
+                      }}
+                      key={item.index}
+                    >
+                      <img
+                        src={URL.createObjectURL(item)}
+                        alt={item.name}
+                        style={{ width: "150px", height: "100px" }}
+                      />
+                    </Box>
+                    <Stack direction="row" spacing={3}>
+                      <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+                        Like
+                      </Typography>
+                      <Typography sx={{ cursor: "pointer", fontSize: "15px" }}>
+                        Reply
+                      </Typography>
+                    </Stack>
                   </Stack>
                 </Stack>
-              </Stack>
-            ))}
+              )
+            )}
         </Paper>
         <SecondPost />
       </Stack>
