@@ -51,6 +51,14 @@ function NewsFeed() {
     setImageEntries((prevState) => [...prevState, ...files]);
     setAttachedImage(files);
     console.log(attachedImage);
+    if(files){
+      return toast.success("Your Post Has Been Updated Sucessfully", {
+        position: "bottom-right",
+        autoClose: 3000,
+        toastClassName: "my-toast",
+        bodyClassName: "my-toast-body",
+      });
+    }
   };
   const handleButtonClick = () => {
     setImageEntries((prevState) => [...prevState, comments]);
