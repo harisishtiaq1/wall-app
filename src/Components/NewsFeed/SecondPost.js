@@ -26,6 +26,11 @@ import AttachFileIcon from "@mui/icons-material/AttachFile";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 
 function SecondPost() {
+  const [isLiked, setIsLiked] = useState(false);
+
+  const handleLikeClick = () => {
+    setIsLiked(true);
+  };
   const [checked, setChecked] = React.useState(true);
   const handleChange = () => {
     setChecked((prev) => !prev);
@@ -87,10 +92,15 @@ function SecondPost() {
       </Stack>
       <Stack direction="row" spacing={6} sx={{ ml: 2 }}>
         <Stack direction="row">
-          <IconButton>
-            <ThumbUpOffAltIcon />
+          <IconButton
+            sx={{ color: isLiked ? "lightblue" : "" }}
+            onClick={handleLikeClick}
+          >
+            <ThumbUpOffAltIcon fontSize="small" />
           </IconButton>
-          <Typography sx={{ color: "grey", mt: 1 }}>323 Likes</Typography>
+          <Typography sx={{ color: isLiked ? "lightblue" : "grey", mt: 1 }}>
+            323 Likes
+          </Typography>
         </Stack>
         <Stack direction="row">
           <IconButton>
