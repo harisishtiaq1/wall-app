@@ -60,9 +60,11 @@ function NewsFeed() {
       });
     }
   };
-  const handleButtonClick = () => {
-    setImageEntries((prevState) => [...prevState, comments]);
-    setComments("");
+  const handleButtonClick = (Entry) => {
+    if (Entry) {
+      setImageEntries((prevState) => [...prevState, comments]);
+      setComments("");
+    }
     if (comments) {
       return toast.success("Your Post Has Been Updated Sucessfully", {
         position: "bottom-right",
