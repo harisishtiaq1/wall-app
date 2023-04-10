@@ -13,8 +13,22 @@ import WhoTOFollow from "./WhoTOFollow";
 import Users from "./Users";
 import Scrollbars from "react-custom-scrollbars";
 function RightSideMenu() {
+  const thumbStyle = {
+    backgroundColor: "#888",
+    borderRadius: "6px",
+    cursor: "pointer",
+    width: "8px",
+    height: "30px",
+    mt: 8, // Set the height of the scrollbar thumb
+  };
   return (
-    <Scrollbars style={{ width: 310, height: 490 }} autoHide={true}>
+    <Scrollbars
+      style={{ width: 310, height: 490 }}
+      autoHide={true}
+      renderThumbVertical={({ style, ...props }) => (
+        <div {...props} style={{ ...style, ...thumbStyle }} />
+      )}
+    >
       <Stack direction="column" sx={{ ml: 5 }}>
         <Paper sx={{ width: "270px", height: "250px", borderRadius: "10px" }}>
           <Link

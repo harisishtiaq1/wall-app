@@ -90,8 +90,22 @@ function NewsFeed() {
       });
     }
   };
+  const thumbStyle = {
+    backgroundColor: "#888",
+    borderRadius: "6px",
+    cursor: "pointer",
+    width: "8px",
+    height: "30px",
+    mt: 8, // Set the height of the scrollbar thumb
+  };
   return (
-    <Scrollbars style={{ width: 500, height: 490 }} autoHide={true}>
+    <Scrollbars
+      style={{ width: 500, height: 490 }}
+      autoHide={true}
+      renderThumbVertical={({ style, ...props }) => (
+        <div {...props} style={{ ...style, ...thumbStyle }} />
+      )}
+    >
       <Stack direction="column">
         <Paper sx={{ width: "500px", height: "100px", borderRadius: "10px" }}>
           <Typography component="h3" variant="h6" sx={{ ml: 3 }}>
