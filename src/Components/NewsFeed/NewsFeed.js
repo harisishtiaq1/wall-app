@@ -31,14 +31,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import Scrollbars from "react-custom-scrollbars";
 function NewsFeed() {
   const [isLiked, setIsLiked] = useState(false);
-
-  const handleLikeClick = () => {
-    setIsLiked(true);
-  };
-  const [checked, setChecked] = React.useState(true);
-  const handleChange = () => {
-    setChecked((prev) => !prev);
-  };
+  const [checked, setChecked] = useState(true);
   const [comments, setComments] = useState("");
   const [postComments, setPostComments] = useState([]);
   const [post, setPost] = useState([]);
@@ -47,6 +40,12 @@ function NewsFeed() {
   const [attachedImage, setAttachedImage] = useState(null);
   const [imageEntries, setImageEntries] = useState([]);
 
+  const handleChange = () => {
+    setChecked((prev) => !prev);
+  };
+  const handleLikeClick = () => {
+    setIsLiked(true);
+  };
   const handleFileUpload = (event) => {
     const files = event.target.files;
     setImageEntries((prevState) => [...prevState, ...files]);
