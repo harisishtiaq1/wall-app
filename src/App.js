@@ -9,7 +9,7 @@ import "./App.css"
 function App() {
   return (
     <>
-  <Toaster toastOptions={{
+  <Toaster gutter={24} toastOptions={{
     className: '',
     style: {
       border: '1px solid',

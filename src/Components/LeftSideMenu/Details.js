@@ -11,7 +11,17 @@ function Details() {
     <Paper
       sx={{ width: "280px", height: "400px", borderRadius: "10px", mt: 5 }}
     >
-      <Stack direction="row" sx={{ ml: 2, mt: 2 }} spacing={2}>
+      <Stack
+        direction="row"
+        sx={{
+          ml: 2,
+          mt: 2,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+        spacing={2}
+      >
         <IconButton>
           <Person2Icon fontSize="small" />
         </IconButton>
@@ -19,7 +29,11 @@ function Details() {
           191 Main St, Bar Harbor, ME 04609, United States
         </Typography>
       </Stack>
-      <Stack direction="row" sx={{ ml: 2, mt: 2 }} spacing={2}>
+      <Stack
+        direction="row"
+        sx={{ ml: 2, mt: 2, display: "flex", alignItems: "center" }}
+        spacing={2}
+      >
         <IconButton>
           <LocalPhoneIcon fontSize="small" />
         </IconButton>
@@ -27,7 +41,11 @@ function Details() {
           092654 60634
         </Typography>
       </Stack>
-      <Stack direction="row" sx={{ ml: 2, mt: 2 }} spacing={2}>
+      <Stack
+        direction="row"
+        sx={{ ml: 2, mt: 2, display: "flex", alignItems: "center" }}
+        spacing={2}
+      >
         <IconButton>
           <EmailIcon fontSize="small" />
         </IconButton>
@@ -35,7 +53,11 @@ function Details() {
           ericbrickey@gmail.com
         </Typography>
       </Stack>
-      <Stack direction="row" sx={{ ml: 2, mt: 2 }} spacing={2}>
+      <Stack
+        direction="row"
+        sx={{ ml: 2, mt: 2, display: "flex", alignItems: "center" }}
+        spacing={2}
+      >
         <IconButton>
           <InfoIcon fontSize="small" />
         </IconButton>
@@ -43,7 +65,11 @@ function Details() {
           Edit description
         </Typography>
       </Stack>
-      <Stack direction="row" sx={{ ml: 2, mt: 2 }} spacing={2}>
+      <Stack
+        direction="row"
+        sx={{ ml: 2, mt: 2, display: "flex", alignItems: "center" }}
+        spacing={2}
+      >
         <IconButton fontSize="small">
           <ThumbUpOffAltIcon />
         </IconButton>
@@ -51,7 +77,11 @@ function Details() {
           331 people like this
         </Typography>
       </Stack>
-      <Stack direction="row" sx={{ ml: 2, mt: 2 }} spacing={2}>
+      <Stack
+        direction="row"
+        sx={{ ml: 2, mt: 2, display: "flex", alignItems: "center" }}
+        spacing={2}
+      >
         <IconButton fontSize="small">
           <PublicIcon />
         </IconButton>
