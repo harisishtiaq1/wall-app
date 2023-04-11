@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import {
   Box,
-  Card,
-  CardActionArea,
-  CardMedia,
   IconButton,
   InputBase,
   Paper,
@@ -29,13 +26,13 @@ import FirstPost from "./FirstPost";
 function NewsFeed() {
   const [isLiked, setIsLiked] = useState(false);
   const [checked, setChecked] = useState(true);
-  const [comments, setComments] = useState("");
   const [postComments, setPostComments] = useState([]);
   const [post, setPost] = useState([]);
   const [newEntries, setNewEntries] = useState([]);
   const [postEntries, setPostEntries] = useState([]);
   const [attachedImage, setAttachedImage] = useState(null);
   const [imageEntries, setImageEntries] = useState([]);
+  const [imagePreview, setImagePreview] = useState("");
 
   const handleChange = () => {
     setChecked((prev) => !prev);
@@ -43,33 +40,16 @@ function NewsFeed() {
   const handleLikeClick = () => {
     setIsLiked(true);
   };
-  const handleFileUpload = (event) => {
-    const files = event.target.files;
-    setImageEntries((prevState) => [...prevState, ...files]);
-    setAttachedImage(files);
-    console.log(attachedImage);
-    if (files) {
-      return toast.success("Your Post Has Been Updated Sucessfully", {
-        position: "bottom-right",
-        autoClose: 3000,
-        toastClassName: "my-toast",
-        bodyClassName: "my-toast-body",
-      });
-    }
-  };
-  const handleButtonClick = (Entry) => {
-    if (Entry) {
-      setImageEntries((prevState) => [...prevState, comments]);
-      setComments("");
-    }
-    if (comments) {
-      return toast.success("Your Post Has Been Updated Sucessfully", {
-        position: "bottom-right",
-        autoClose: 3000,
-        toastClassName: "my-toast",
-        bodyClassName: "my-toast-body",
-      });
-    }
+
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      setImagePreview(reader.result);
+    };
+
+    reader.readAsDataURL(file);
   };
   const handleButton = () => {
     setNewEntries((prevState) => [...prevState, post]);
@@ -114,7 +94,7 @@ function NewsFeed() {
       )}
     >
       <Stack direction="column">
-        <Paper sx={{ width: "500px", height: "100px", borderRadius: "10px" }}>
+        <Paper sx={{ width: "500px", borderRadius: "10px" }}>
           <Typography component="h3" variant="h6" sx={{ ml: 3 }}>
             Create Post
           </Typography>
@@ -128,7 +108,6 @@ function NewsFeed() {
               sx={{
                 backgroundColor: "#F7F7F7",
                 width: "400px",
-                height: "40px",
                 mt: 1,
                 ml: 2,
                 borderRadius: "50px",
@@ -144,9 +123,20 @@ function NewsFeed() {
                 onChange={(e) => setPost(e.target.value)}
               />
               <Stack direction="row">
-                <IconButton type="file">
-                  <ImageIcon fontSize="small" />
-                </IconButton>
+                <span>
+                  <IconButton>
+                    <label htmlFor="file-input">
+                      <ImageIcon fontSize="small" />
+                    </label>
+                  </IconButton>
+                  <input
+                    multiple
+                    onChange={handleImageChange}
+                    id="file-input"
+                    type="file"
+                    style={{ display: "none" }}
+                  />
+                </span>
                 <IconButton>
                   <VideocamIcon fontSize="small" />
                 </IconButton>
@@ -177,6 +167,13 @@ function NewsFeed() {
               </Stack>
             </Paper>
           </Stack>
+          <Box sx={{ mt: 2, ml: 5 }}>
+            <img
+              src={imagePreview}
+              style={{ width: "70px", height: "70px" }}
+              alt=""
+            />
+          </Box>
         </Paper>
         {newEntries &&
           newEntries.map((Entry, index) => {
@@ -210,6 +207,13 @@ function NewsFeed() {
                   </Typography>
                 </Stack>
                 <Typography sx={{ mt: 3, ml: 3 }}>{Entry}</Typography>
+                <Box>
+                  <img
+                    src={imagePreview}
+                    style={{ width: "500px", height: "150px" }}
+                    alt=""
+                  />
+                </Box>
                 <Stack
                   direction="row"
                   spacing={3}
@@ -348,8 +352,8 @@ function NewsFeed() {
               </Paper>
             );
           })}
-        <FirstPost />
-        <SecondPost />
+        {/* <FirstPost />
+        <SecondPost /> */}
       </Stack>
     </Scrollbars>
   );
