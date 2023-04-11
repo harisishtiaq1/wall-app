@@ -39,7 +39,7 @@ function SideMenu() {
   };
   return (
     <Scrollbars
-      style={{ width: 280, height: 490 }}
+      style={{ width: 290, height: 490 }}
       autoHide={true}
       renderThumbVertical={({ style, ...props }) => (
         <div {...props} style={{ ...style, ...thumbStyle }} />

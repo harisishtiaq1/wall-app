@@ -110,7 +110,7 @@ function NewsFeed() {
   };
   return (
     <Scrollbars
-      style={{ width: 500, height: 490 }}
+      style={{ width: 510, height: 490 }}
       autoHide={true}
       renderThumbVertical={({ style, ...props }) => (
         <div {...props} style={{ ...style, ...thumbStyle }} />

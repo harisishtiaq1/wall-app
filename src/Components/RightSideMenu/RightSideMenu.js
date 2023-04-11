@@ -18,12 +18,12 @@ function RightSideMenu() {
     borderRadius: "6px",
     cursor: "pointer",
     width: "4px",
-    height: "20px",
-    mt: 8, // Set the height of the scrollbar thumb
+    height:"5px",
+    mt: 8,
   };
   return (
     <Scrollbars
-      style={{ width: 310, height: 490 }}
+      style={{ width: 320, height: 490 }}
       autoHide={true}
       renderThumbVertical={({ style, ...props }) => (
         <div {...props} style={{ ...style, ...thumbStyle }} />
