@@ -345,7 +345,7 @@ function FirstPost() {
                 >
                   <img
                     src={URL.createObjectURL(item)}
-                    alt=""
+                    alt={item.name}
                     style={{ width: "150px", height: "100px" }}
                   />
                 </Box>
