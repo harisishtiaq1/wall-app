@@ -32,8 +32,8 @@ function NewsFeed() {
   const [imageFile, setImageFile] = useState(null);
 
   const handleImageChange = (event) => {
-    const file = event.target.files[0];
-    setImageFile(file);
+    const files = event.target.files;
+    setImageFile(files);
   };
 
   const handleImageClear = () => {
