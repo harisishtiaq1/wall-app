@@ -24,7 +24,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import Scrollbars from "react-custom-scrollbars";
 import FirstPost from "./FirstPost";
 function NewsFeed() {
-  const [isLiked, setIsLiked] = useState(false);
+  const [isLiked, setIsLiked] = useState(true);
   const [postComments, setPostComments] = useState([]);
   const [post, setPost] = useState("");
   const [entries, setEntries] = useState([]);
@@ -32,8 +32,8 @@ function NewsFeed() {
   const [imageFile, setImageFile] = useState(null);
 
   const handleImageChange = (event) => {
-    const files = event.target.files;
-    setImageFile(files);
+    const file = event.target.files[0];
+    setImageFile(file);
   };
 
   const handleImageClear = () => {
@@ -41,7 +41,7 @@ function NewsFeed() {
   };
 
   const handleLikeClick = () => {
-    setIsLiked(true);
+    setIsLiked(false);
   };
   const handleButton = () => {
     let data = {
@@ -124,7 +124,7 @@ function NewsFeed() {
               <Stack direction="row">
                 <span>
                   <IconButton>
-                    <label htmlFor="file-input">
+                    <label htmlFor="file-inputt">
                       <ImageIcon fontSize="small" />
                     </label>
                   </IconButton>
@@ -132,7 +132,7 @@ function NewsFeed() {
                     multiple
                     name="imageInput"
                     onChange={handleImageChange}
-                    id="file-input"
+                    id="file-inputt"
                     type="file"
                     style={{ display: "none" }}
                   />

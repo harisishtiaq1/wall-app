@@ -7,6 +7,7 @@ import {
   IconButton,
   InputBase,
   Paper,
+  Popover,
   Stack,
   Typography,
 } from "@mui/material";
@@ -27,17 +28,20 @@ import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 
 function SecondPost() {
   const [isLiked, setIsLiked] = useState(false);
-
+  const [comments, setComments] = useState([]);
+  const [entries, setEntries] = useState([]);
+  const [popoverOpen, setPopoverOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
   const handleLikeClick = () => {
     setIsLiked(true);
   };
-  const [checked, setChecked] = React.useState(true);
-  const handleChange = () => {
-    setChecked((prev) => !prev);
+  const handleEmojiIconClick = (event) => {
+    setPopoverOpen(true);
+    setAnchorEl(event.currentTarget);
   };
-  const [comments, setComments] = useState([]);
-  const [entries, setEntries] = useState([]);
-
+  const handlePopoverClose = () => {
+    setPopoverOpen(false);
+  };
   const handleButtonClick = (Entry) => {
     if (Entry) {
       setEntries((prevState) => [...prevState, comments]);
@@ -54,6 +58,7 @@ function SecondPost() {
     }
   };
   return (
+    <>
     <Paper sx={{ width: "500px", borderRadius: "10px", mt: 5 }}>
       <Stack direction="row" sx={{ mt: 2 }}>
         <Box
@@ -144,18 +149,14 @@ function SecondPost() {
             }}
           />
           <Stack direction="row">
-            <IconButton sx={{ ml: 15 }}>
+            <IconButton sx={{ ml: 15 }} onClick={handleEmojiIconClick}>
               <EmojiEmotionsIcon fontSize="small" />
             </IconButton>
             <IconButton>
               <AttachFileIcon fontSize="small" />
             </IconButton>
             {comments && comments.length > 0 ? (
-              <IconButton
-                onClick={handleButtonClick}
-                onChange={handleChange}
-                checked={checked}
-              >
+              <IconButton onClick={handleButtonClick}>
                 <SendIcon fontSize="small" />
               </IconButton>
             ) : (
@@ -283,6 +284,15 @@ function SecondPost() {
           );
         })}
     </Paper>
+    <Popover
+    open={popoverOpen}
+    anchorEl={anchorEl}
+    onClose={handlePopoverClose}
+    
+  >
+    Haris
+  </Popover>
+  </>
   );
 }
 

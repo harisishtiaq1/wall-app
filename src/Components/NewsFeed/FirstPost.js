@@ -341,7 +341,7 @@ function FirstPost() {
                     border: " 1px solid rgba(0, 0, 0, 0.12)",
                     borderRadius: "40px 40px 40px 0px",
                   }}
-                  key={index}
+                  key={item.index}
                 >
                   <img
                     src={URL.createObjectURL(item)}
