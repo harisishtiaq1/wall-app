@@ -24,35 +24,33 @@ import ShareIcon from "@mui/icons-material/Share";
 import Scrollbars from "react-custom-scrollbars";
 import FirstPost from "./FirstPost";
 function NewsFeed() {
-  // const [attachedImage, setAttachedImage] = useState(null);
-  // const [imageEntries, setImageEntries] = useState([]);
   const [isLiked, setIsLiked] = useState(false);
-  const [checked, setChecked] = useState(true);
   const [postComments, setPostComments] = useState([]);
-  const [post, setPost] = useState([]);
-  const [newEntries, setNewEntries] = useState([]);
+  const [post, setPost] = useState("");
+  const [entries, setEntries] = useState([]);
   const [postEntries, setPostEntries] = useState([]);
   const [imageFile, setImageFile] = useState(null);
-  const [imagePreview, setImagePreview] = useState(null);
 
   const handleImageChange = (event) => {
-    const files = event.target.files;
-    setNewEntries((prevState) => [...prevState, ...files]);
-    setImageFile(files);
-    console.log(imageFile);
+    const file = event.target.files[0];
+    setImageFile(file);
   };
-  // const handleImageClear = () => {
-  //   setImagePreview(null); // Clear the image by setting the state to null
-  // };
-  const handleChange = () => {
-    setChecked((prev) => !prev);
+
+  const handleImageClear = () => {
+    setImageFile(null);
   };
+
   const handleLikeClick = () => {
     setIsLiked(true);
   };
   const handleButton = () => {
-    setNewEntries((prevState) => [...prevState, post]);
+    let data = {
+      comment: post,
+      file: imageFile,
+    };
+    setEntries((prevState) => [...prevState, data]);
     setPost("");
+    handleImageClear();
 
     if (post) {
       return toast.success("Your Post Has Been Updated Sucessfully", {
@@ -83,8 +81,9 @@ function NewsFeed() {
     cursor: "pointer",
     width: "4px",
     height: "20px",
-    mt: 8, // Set the height of the scrollbar thumb
+    mt: 8,
   };
+  console.log("all entries: ", entries);
   return (
     <Scrollbars
       style={{ width: 510, height: 490 }}
@@ -131,6 +130,7 @@ function NewsFeed() {
                   </IconButton>
                   <input
                     multiple
+                    name="imageInput"
                     onChange={handleImageChange}
                     id="file-input"
                     type="file"
@@ -146,11 +146,9 @@ function NewsFeed() {
                 <IconButton>
                   <Person2Icon fontSize="small" />
                 </IconButton>
-                {post && post.length > 0 ? (
+                {post.length > 0 || imageFile ? (
                   <IconButton
                     onClick={handleButton}
-                    onChange={handleChange}
-                    checked={checked}
                     onKeyDown={(e) => {
                       if (e.key === "Enter") {
                         handleButton(post);
@@ -170,17 +168,18 @@ function NewsFeed() {
           {imageFile && (
             <Box sx={{ mt: 2, ml: 5 }}>
               <img
-                src={imageFile}
+                src={URL.createObjectURL(imageFile)}
                 style={{ width: "70px", height: "70px" }}
                 alt=""
               />
             </Box>
           )}
         </Paper>
-        {newEntries &&
-          newEntries.map((Entry, index) => {
+        {entries &&
+          entries.map((item, index) => {
             return (
               <Paper
+                key={index}
                 sx={{
                   width: "500px",
                   paddingBottom: "20px",
@@ -208,23 +207,22 @@ function NewsFeed() {
                     Suzanna J. Fowler
                   </Typography>
                 </Stack>
-                <Typography sx={{ mt: 3, ml: 3 }}>{Entry}</Typography>
-                {newEntries &&
-                  newEntries.map(() => (
-                    <Box
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <img
-                        src={imagePreview}
-                        style={{ width: "450px", height: "150px" }}
-                        alt=""
-                      />
-                    </Box>
-                  ))}
+                <Typography sx={{ mt: 3, ml: 3 }}>{item?.comment}</Typography>
+                {item?.file && (
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img
+                      src={URL.createObjectURL(item?.file)}
+                      style={{ width: "450px", height: "150px" }}
+                      alt=""
+                    />
+                  </Box>
+                )}
                 <Stack
                   direction="row"
                   spacing={3}
@@ -363,8 +361,8 @@ function NewsFeed() {
               </Paper>
             );
           })}
-        {/* <FirstPost />
-        <SecondPost /> */}
+        <FirstPost />
+        <SecondPost />
       </Stack>
     </Scrollbars>
   );

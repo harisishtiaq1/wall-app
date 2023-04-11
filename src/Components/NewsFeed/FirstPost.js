@@ -341,11 +341,11 @@ function FirstPost() {
                     border: " 1px solid rgba(0, 0, 0, 0.12)",
                     borderRadius: "40px 40px 40px 0px",
                   }}
-                  key={item.index}
+                  key={index}
                 >
                   <img
                     src={URL.createObjectURL(item)}
-                    alt={item.name}
+                    alt=""
                     style={{ width: "150px", height: "100px" }}
                   />
                 </Box>
