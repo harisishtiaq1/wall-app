@@ -18,7 +18,7 @@ function RightSideMenu() {
     borderRadius: "6px",
     cursor: "pointer",
     width: "4px",
-    height:"5px",
+    height: "5px",
     mt: 8,
   };
   return (

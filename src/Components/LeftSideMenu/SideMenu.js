@@ -35,7 +35,7 @@ function SideMenu() {
     cursor: "pointer",
     width: "4px",
     height: "20px",
-    mt: 8, // Set the height of the scrollbar thumb
+    mt: 8,
   };
   return (
     <Scrollbars
