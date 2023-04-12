@@ -25,7 +25,6 @@ import ShareIcon from "@mui/icons-material/Share";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 import Picker from "emoji-picker-react";
-
 function SecondPost() {
   const [isLiked, setIsLiked] = useState(false);
   const [comments, setComments] = useState("");
@@ -152,8 +151,13 @@ function SecondPost() {
           <Stack direction="row">
             <IconButton sx={{ ml: 15 }} onClick={handleOpen}>
               <EmojiEmotionsIcon fontSize="small" />
-              {showPicker && <Picker width={300} onEmojiClick={onEmojiClick} />}
             </IconButton>
+            {showPicker && (
+              <Picker
+                pickerStyle={{ width: "100%", fontSize: "30px" }}
+                onEmojiClick={onEmojiClick}
+              />
+            )}
             <IconButton>
               <AttachFileIcon fontSize="small" />
             </IconButton>
@@ -269,7 +273,7 @@ function SecondPost() {
                     padding: "10px 20px",
                   }}
                 >
-                  <Typography component="h6" variant="p">
+                  <Typography component="h6" variant="h3">
                     {Entry}
                   </Typography>
                 </Box>

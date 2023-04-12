@@ -100,13 +100,13 @@ function NewsFeed() {
             <Box
               component="img"
               src={person}
-              sx={{ mr: 1, width: "40px", borderRadius: "50%", ml: 3, mt: 1 }}
+              sx={{ mr: 1, width: "40px",height:'40px', borderRadius: "50%", ml: 3, mt: 3 }}
             />
             <Paper
               sx={{
                 backgroundColor: "#F7F7F7",
                 width: "400px",
-                mt: 1,
+                mt: 2,
                 ml: 2,
                 borderRadius: "50px",
                 display: "flex",
@@ -234,7 +234,8 @@ function NewsFeed() {
                   <Stack direction="row">
                     <IconButton
                       sx={{ color: isLiked ? "#91BCE7" : "" }}
-                      onChange={handleLikeClick}
+                      onClick={handleLikeClick}
+                      
                     >
                       <ThumbUpOffAltIcon fontSize="small" />
                     </IconButton>
