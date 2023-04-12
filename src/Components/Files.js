@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Picker, { Emoji, EmojiStyle } from "emoji-picker-react";
 import "../App.css";
+import { Stack } from "react-bootstrap";
+import { Input, Typography } from "@mui/material";
 // import SentimentSatisfiedAltIcon from "@material-ui/icons/SentimentSatisfiedAlt";
 function App() {
   const [inputStr, setInputStr] = useState("");
@@ -15,9 +17,9 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <div className="picker-container">
-        <input
+    <Stack>
+      <Stack>
+        <Input
           className="input-style"
           value={inputStr}
           onChange={(e) => setInputStr(e.target.value)}
@@ -34,8 +36,8 @@ function App() {
             onEmojiClick={(emojiObject) => onEmojiClick(emojiObject)}
           />
         )}
-      </div>
-      <h2>
+      </Stack>
+      <Typography>
         Emoji Picker{" "}
         {selectedEmoji && selectedEmoji.map((emojiCode) => (
           <Emoji
@@ -45,8 +47,8 @@ function App() {
             size={22}
           />
         ))}
-      </h2>
-    </div>
+      </Typography>
+    </Stack>
   );
 }
 
