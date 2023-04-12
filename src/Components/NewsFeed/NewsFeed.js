@@ -83,7 +83,6 @@ function NewsFeed() {
     height: "20px",
     mt: 8,
   };
-  console.log("all entries: ", entries);
   return (
     <Scrollbars
       style={{ width: 510, height: 490 }}

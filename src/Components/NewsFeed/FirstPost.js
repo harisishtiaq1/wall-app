@@ -38,7 +38,6 @@ function FirstPost() {
     const files = event.target.files;
     setImageEntries((prevState) => [...prevState, ...files]);
     setAttachedImage(files);
-    console.log(attachedImage);
     if (files) {
       return toast.success("Your Post Has Been Updated Sucessfully", {
         position: "bottom-right",
@@ -47,6 +46,7 @@ function FirstPost() {
         bodyClassName: "my-toast-body",
       });
     }
+    console.log(attachedImage);
   };
   const handleButtonClick = (Entry) => {
     if (Entry) {

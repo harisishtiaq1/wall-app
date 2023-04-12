@@ -38,11 +38,6 @@ function SecondPost() {
     setShowPicker(false);
   };
 
-  console.log("COmments");
-  console.log("COmments");
-  console.log("COmments");
-  console.log(comments);
-
   const handleLikeClick = () => {
     setIsLiked(true);
   };
@@ -54,7 +49,6 @@ function SecondPost() {
       setEntries((prevState) => [...prevState, comments]);
       setComments("");
     }
-    console.log("comments", comments);
     if (comments) {
       return toast.success("Your Post Has Been Updated Sucessfully", {
         position: "bottom-right",
