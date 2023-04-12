@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Picker from "emoji-picker-react";
 import "../App.css";
 import { Stack } from "react-bootstrap";
-import { Container, IconButton,  InputBase } from "@mui/material";
+import { Container, IconButton, InputBase } from "@mui/material";
 // import SentimentSatisfiedAltIcon from "@material-ui/icons/SentimentSatisfiedAlt";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 function App() {
