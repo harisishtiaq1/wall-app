@@ -30,23 +30,25 @@ function SecondPost() {
   const [isLiked, setIsLiked] = useState(false);
   const [comments, setComments] = useState("");
   const [entries, setEntries] = useState([]);
-  
   const [showPicker, setShowPicker] = useState(false);
-  const onEmojiClick = (event, emojiObject) => {
+  const [selectedEmoji, setSelectedEmoji] = useState("");
+  const onEmojiClick = (emojiObject) => {
     setComments((prevInput) => prevInput + emojiObject.emoji);
+    setSelectedEmoji([...selectedEmoji, emojiObject.unified]);
     setShowPicker(false);
   };
-console.log("COmments")
-console.log("COmments")
-console.log("COmments")
-console.log(comments)
+
+  console.log("COmments");
+  console.log("COmments");
+  console.log("COmments");
+  console.log(comments);
 
   const handleLikeClick = () => {
     setIsLiked(true);
   };
-const handleOpen=()=>{
-  setShowPicker(true)
-}
+  const handleOpen = () => {
+    setShowPicker(true);
+  };
   const handleButtonClick = (Entry) => {
     if (Entry) {
       setEntries((prevState) => [...prevState, comments]);
@@ -156,9 +158,7 @@ const handleOpen=()=>{
           <Stack direction="row">
             <IconButton sx={{ ml: 15 }} onClick={handleOpen}>
               <EmojiEmotionsIcon fontSize="small" />
-              {showPicker && (
-                <Picker width={300} onEmojiClick={onEmojiClick} />
-              )}
+              {showPicker && <Picker width={300} onEmojiClick={onEmojiClick} />}
             </IconButton>
             <IconButton>
               <AttachFileIcon fontSize="small" />
