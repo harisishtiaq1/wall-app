@@ -1,22 +1,18 @@
 import React, { useState } from "react";
-import data from '@emoji-mart/data'
-import Picker from '@emoji-mart/react'
+import Picker, { Emoji, EmojiStyle } from "emoji-picker-react";
 import "../App.css";
-// import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
-
+// import SentimentSatisfiedAltIcon from "@material-ui/icons/SentimentSatisfiedAlt";
 function App() {
   const [inputStr, setInputStr] = useState("");
   const [showPicker, setShowPicker] = useState(false);
+  const [selectedEmoji, setSelectedEmoji] = useState("");
 
-  const onEmojiClick = (event, emojiObject) => {
-    setInputStr((prevInput) => prevInput + emojiObject.emoji);
+  const onEmojiClick = (emojiObject) => {
+    // setInputStr(emojiObject.unified);
+    setInputStr((prevInput) => prevInput + emojiObject.unified);
+    setSelectedEmoji([...selectedEmoji,emojiObject.unified]);
     setShowPicker(false);
   };
-console.log("inputStr")
-console.log("inputStr")
-console.log("inputStr")
-console.log("inputStr")
-console.log("inputStr")
 
   return (
     <div className="app">
@@ -33,9 +29,23 @@ console.log("inputStr")
           alt=""
         />
         {showPicker && (
-           <Picker data={data} onEmojiSelect={onEmojiClick} />
+          <Picker
+            pickerStyle={{ width: "100%" }}
+            onEmojiClick={(emojiObject) => onEmojiClick(emojiObject)}
+          />
         )}
       </div>
+      <h2>
+        Emoji Picker{" "}
+        {selectedEmoji && selectedEmoji.map((emojiCode) => (
+          <Emoji
+            key={emojiCode}
+            unified={emojiCode}
+            emojiStyle={EmojiStyle.APPLE}
+            size={22}
+          />
+        ))}
+      </h2>
     </div>
   );
 }

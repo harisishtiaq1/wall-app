@@ -24,15 +24,13 @@ import CommentIcon from "@mui/icons-material/Comment";
 import ShareIcon from "@mui/icons-material/Share";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
-import data from "@emoji-mart/data";
-import Picker from "@emoji-mart/react";
+import Picker from "emoji-picker-react";
 
 function SecondPost() {
   const [isLiked, setIsLiked] = useState(false);
   const [comments, setComments] = useState("");
   const [entries, setEntries] = useState([]);
-  // const [emoji, setEmoji] = useState("");
-  // const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+  
   const [showPicker, setShowPicker] = useState(false);
   const onEmojiClick = (event, emojiObject) => {
     setComments((prevInput) => prevInput + emojiObject.emoji);
@@ -148,7 +146,7 @@ const handleOpen=()=>{
             sx={{ ml: 3, flex: 1, mt: 0.5 }}
             placeholder="Write a comment"
             value={comments}
-            onChange={(event) => setComments(event.target.value)}
+            onChange={(e) => setComments(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
                 handleButtonClick(comments);
@@ -159,7 +157,7 @@ const handleOpen=()=>{
             <IconButton sx={{ ml: 15 }} onClick={handleOpen}>
               <EmojiEmotionsIcon fontSize="small" />
               {showPicker && (
-                <Picker width={300} data={data} onEmojiSelect={onEmojiClick} />
+                <Picker width={300} onEmojiClick={onEmojiClick} />
               )}
             </IconButton>
             <IconButton>
