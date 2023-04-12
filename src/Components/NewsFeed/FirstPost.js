@@ -28,6 +28,7 @@ function FirstPost() {
   const [imageEntries, setImageEntries] = useState([]);
   const [isLiked, setIsLiked] = useState(false);
   const [comments, setComments] = useState("");
+
   const [attachedImage, setAttachedImage] = useState(null);
 
   const handleLikeClick = () => {

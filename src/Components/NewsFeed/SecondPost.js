@@ -7,7 +7,6 @@ import {
   IconButton,
   InputBase,
   Paper,
-  Popover,
   Stack,
   Typography,
 } from "@mui/material";
@@ -25,23 +24,31 @@ import CommentIcon from "@mui/icons-material/Comment";
 import ShareIcon from "@mui/icons-material/Share";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
+import data from "@emoji-mart/data";
+import Picker from "@emoji-mart/react";
 
 function SecondPost() {
   const [isLiked, setIsLiked] = useState(false);
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState("");
   const [entries, setEntries] = useState([]);
-  const [popoverOpen, setPopoverOpen] = useState(false);
-  const [anchorEl, setAnchorEl] = useState(null);
+  // const [emoji, setEmoji] = useState("");
+  // const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+  const [showPicker, setShowPicker] = useState(false);
+  const onEmojiClick = (event, emojiObject) => {
+    setComments((prevInput) => prevInput + emojiObject.emoji);
+    setShowPicker(false);
+  };
+console.log("COmments")
+console.log("COmments")
+console.log("COmments")
+console.log(comments)
+
   const handleLikeClick = () => {
     setIsLiked(true);
   };
-  const handleEmojiIconClick = (event) => {
-    setPopoverOpen(true);
-    setAnchorEl(event.currentTarget);
-  };
-  const handlePopoverClose = () => {
-    setPopoverOpen(false);
-  };
+const handleOpen=()=>{
+  setShowPicker(true)
+}
   const handleButtonClick = (Entry) => {
     if (Entry) {
       setEntries((prevState) => [...prevState, comments]);
@@ -58,7 +65,6 @@ function SecondPost() {
     }
   };
   return (
-    <>
     <Paper sx={{ width: "500px", borderRadius: "10px", mt: 5 }}>
       <Stack direction="row" sx={{ mt: 2 }}>
         <Box
@@ -138,6 +144,7 @@ function SecondPost() {
           }}
         >
           <InputBase
+            type="text"
             sx={{ ml: 3, flex: 1, mt: 0.5 }}
             placeholder="Write a comment"
             value={comments}
@@ -149,8 +156,11 @@ function SecondPost() {
             }}
           />
           <Stack direction="row">
-            <IconButton sx={{ ml: 15 }} onClick={handleEmojiIconClick}>
+            <IconButton sx={{ ml: 15 }} onClick={handleOpen}>
               <EmojiEmotionsIcon fontSize="small" />
+              {showPicker && (
+                <Picker width={300} data={data} onEmojiSelect={onEmojiClick} />
+              )}
             </IconButton>
             <IconButton>
               <AttachFileIcon fontSize="small" />
@@ -284,15 +294,6 @@ function SecondPost() {
           );
         })}
     </Paper>
-    <Popover
-    open={popoverOpen}
-    anchorEl={anchorEl}
-    onClose={handlePopoverClose}
-    
-  >
-    Haris
-  </Popover>
-  </>
   );
 }
 
